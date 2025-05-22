@@ -1,68 +1,131 @@
-// components/Contact.tsx
-
 "use client";
 
-import { useState } from "react";
-
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    // ➤ Tu peux envoyer les données ici vers une API ou service (Formspree, Resend, etc.)
-    console.log("Form submitted:", form);
-    setSubmitted(true);
-  };
-
   return (
-    <section className="max-w-xl mx-auto p-6 bg-white shadow rounded mt-10">
-      <h2 className="text-2xl font-semibold mb-4">Contactez-moi</h2>
-      {submitted ? (
-        <p className="text-green-600">Merci ! Votre message a été envoyé.</p>
-      ) : (
-        <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-          <input
-            type="text"
-            name="name"
-            placeholder="Votre nom"
-            value={form.name}
-            onChange={handleChange}
-            required
-            className="border p-2 rounded"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Votre email"
-            value={form.email}
-            onChange={handleChange}
-            required
-            className="border p-2 rounded"
-          />
-          <textarea
-            name="message"
-            placeholder="Votre message"
-            value={form.message}
-            onChange={handleChange}
-            required
-            rows={5}
-            className="border p-2 rounded"
-          ></textarea>
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center px-4">
+      <div className="max-w-2xl w-full p-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
+        <h2 className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white">
+          Contactez-moi
+        </h2>
+        <form className="space-y-6">
+          {/* Prénom et Nom */}
+          <div className="grid md:grid-cols-2 md:gap-6">
+            {/* Prénom */}
+            <div className="relative z-0 w-full group">
+              <input
+                type="text"
+                name="prenom"
+                id="prenom"
+                placeholder=" "
+                required
+                className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 dark:text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:focus:border-blue-500"
+              />
+              <label
+                htmlFor="prenom"
+                className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600 dark:peer-focus:text-blue-500"
+              >
+                Prénom
+              </label>
+            </div>
+
+            {/* Nom */}
+            <div className="relative z-0 w-full group">
+              <input
+                type="text"
+                name="nom"
+                id="nom"
+                placeholder=" "
+                className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 dark:text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:focus:border-blue-500"
+              />
+              <label
+                htmlFor="nom"
+                className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600 dark:peer-focus:text-blue-500"
+              >
+                Nom
+              </label>
+            </div>
+          </div>
+
+          {/* Téléphone */}
+          <div className="relative z-0 w-full group">
+            <input
+              type="tel"
+              name="telephone"
+              id="telephone"
+              placeholder=" "
+              className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 dark:text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:focus:border-blue-500"
+            />
+            <label
+              htmlFor="telephone"
+              className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600 dark:peer-focus:text-blue-500"
+            >
+              Téléphone
+            </label>
+          </div>
+
+          {/* Email */}
+          <div className="relative z-0 w-full group">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder=" "
+              required
+              className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 dark:text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:focus:border-blue-500"
+            />
+            <label
+              htmlFor="email"
+              className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600 dark:peer-focus:text-blue-500"
+            >
+              Adresse email *
+            </label>
+          </div>
+
+          {/* Objet */}
+          <div className="relative z-0 w-full group">
+            <input
+              type="text"
+              name="objet"
+              id="objet"
+              placeholder=" "
+              required
+              className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 dark:text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:focus:border-blue-500"
+            />
+            <label
+              htmlFor="objet"
+              className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600 dark:peer-focus:text-blue-500"
+            >
+              Objet *
+            </label>
+          </div>
+
+          {/* Message */}
+          <div className="relative z-0 w-full group">
+            <textarea
+              name="message"
+              id="message"
+              required
+              rows={4}
+              placeholder=" "
+              className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 dark:text-white focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:focus:border-blue-500 resize-none"
+            ></textarea>
+            <label
+              htmlFor="message"
+              className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600 dark:peer-focus:text-blue-500"
+            >
+              Message *
+            </label>
+          </div>
+
+          {/* Bouton */}
           <button
             type="submit"
-            className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800"
+            className="w-full rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-5 py-2.5 text-sm font-medium text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-            Envoyer
+            Envoyer le message
           </button>
         </form>
-      )}
-    </section>
+      </div>
+    </div>
   );
 }
