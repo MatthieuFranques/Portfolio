@@ -2,22 +2,22 @@ type CardHorizontalProps = {
   title: string;
   description: string;
   image: string;
-  link?: string;
+  onClick?: () => void;
 };
 
 export default function CardHorizontal({
   title,
   description,
   image,
-  link = "#",
+  onClick,
 }: CardHorizontalProps) {
   return (
-    <a
-      href={link}
-      className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+    <div
+      onClick={onClick}
+      className="cursor-pointer flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
     >
       <img
-        className="object-cover w-full md:w-auto md:min-w-[150px] md:max-w-[250px] h-auto md:h-[200px] md:rounded-none md:rounded-s-lg"
+        className="w-full md:w-auto md:min-w-[150px] md:max-w-[250px] h-auto md:h-[200px] object-contain p-2 md:rounded-none md:rounded-s-lg"
         src={image}
         alt={title}
       />
@@ -29,6 +29,6 @@ export default function CardHorizontal({
           {description}
         </p>
       </div>
-    </a>
+    </div>
   );
 }
