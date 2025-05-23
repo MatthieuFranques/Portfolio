@@ -1,12 +1,16 @@
 import CareerPage from "@/app/career/page";
 import Contact from "@/app/contact/page";
 import Projects from "@/app/project/page";
-import TechTicker from "@/app/Components/teckTicker";
+import TechTicker from "@/app/Components/techTicker";
+import TechClound from "@/app/Components/techClound";
+import AboutMe from "./Components/aboutMe";
 
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start flex-grow">
+        <AboutMe />
+        <TechClound />
         <TechTicker />
         <Projects />
         <CareerPage />

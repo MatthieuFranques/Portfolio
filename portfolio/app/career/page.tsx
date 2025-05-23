@@ -63,7 +63,7 @@ export default function CareerPage() {
   return (
     <section className="max-w-screen-xl mx-auto px-4 py-8 space-y-12">
       <div>
-        <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
+        <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
           Expérience
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -78,7 +78,7 @@ export default function CareerPage() {
       </div>
 
       <div>
-        <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
+        <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
           Formation
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

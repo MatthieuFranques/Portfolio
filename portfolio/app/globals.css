@@ -25,6 +25,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Animation TecKTicker */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -33,10 +34,47 @@ body {
     transform: translateX(-50%);
   }
 }
-
+/*Opaciy left right  */
 .animate-scroll {
   animation-name: scroll;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
+}
+
+.fade-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/*Word Cloud */
+
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
 }

@@ -1,33 +1,25 @@
 const techIcons = [
   "/icons/python.png",
   "/icons/react.png",
-  "/icons/nextJs.png",
-  "/icons/nodejs.svg",
+  "/icons/next.png",
+  "/icons/node.svg",
   "/icons/docker.png",
-  "/icons/dotnet.jpg",
+  "/icons/dotnet.png",
   "/icons/blazor.png",
-  "/icons/flutter.jpg",
+  "/icons/flutter.png",
   "/icons/java.png",
   "/icons/spring.png",
   "/icons/c++.png",
   "/icons/unreal.png",
 ];
 
-const techIcons2 = [
-  "file.svg",
-  "/globe.svg",
-  "/globe.svg",
-  "/logoShop4Me.svg",
-  "/vercel.svg",
-];
-
 export default function TechTicker() {
   return (
     <section className="max-w-screen-xl mx-auto px-4 py-8 space-y-12">
       <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
-        Compétences
+        Mes outils favoris
       </h1>
-      <div className="overflow-hidden w-full bg-gray-100 dark:bg-gray-800 py-4">
+      <div className="overflow-hidden w-full py-4 relative fade-mask">
         <div
           className="flex animate-scroll whitespace-nowrap"
           style={{ animationDuration: "20s" }}
