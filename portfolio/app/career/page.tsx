@@ -13,20 +13,21 @@ export default function CareerPage() {
   const experienceCards = [
     {
       title: "Alternant développeur Web chez Alb@rosa",
-      description:
-        "Voici les plus grandes acquisitions technologiques de 2021 jusqu'à présent.",
+      description: "D'octobre 2024 à septembre 2025",
       image: "companys/albarosa.png",
+      modalDescription: "",
     },
     {
       title: "Alternant développeur Mobile Frontend chez Pinkin,",
-      description:
-        "Découvrez les dernières fonctionnalités ajoutées dans React 18.",
+      description: "De novembre 2023 à août 2024",
       image: "companys/pinkin.png",
+      modalDescription: "",
     },
     {
       title: "Stage développeur applicatif chez AxOptim,",
-      description: "Créez des interfaces modernes et responsives avec Figma.",
+      description: "D'avril 2023 à septembre 2023",
       image: "companys/axoptim.png",
+      modalDescription: "",
     },
   ];
 
@@ -36,59 +37,70 @@ export default function CareerPage() {
       description:
         "Voici les plus grandes acquisitions technologiques de 2021 jusqu'à présent.",
       image: "companys/epitechToulouse.jpg",
+      modalDescription: "",
     },
     {
       title: "Licence Pro RTAI — Université Toulouse Capitole",
       description:
         "Découvrez les dernières fonctionnalités ajoutées dans React 18.",
       image: "companys/ut1.jpg",
+      modalDescription: "",
     },
     {
       title: "BTS SIO — Lycée Ozenne,Toulouse",
       description: "Créez des interfaces modernes et responsives avec Figma.",
       image: "companys/ozenne.png",
+      modalDescription: "",
     },
     {
       title: "BAC Pro SN — Lycée St Joseph Rodez",
       description: "Option RSCI (Réseau Informatique et Systèmes Communicants)",
       image: "companys/louisQuerbes.png",
+      modalDescription: "",
     },
   ];
 
   return (
-    <div className="max-w-screen-xl mx-auto px-4 py-8 grid grid-cols-1 gap-6">
-      <h1 className="text-3xl font-semibold text-gray-900 dark:text-white">
-        Expérience
-      </h1>
+    <section className="max-w-screen-xl mx-auto px-4 py-8 space-y-12">
+      <div>
+        <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
+          Expérience
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {experienceCards.map((card, index) => (
+            <CardHorizontal
+              key={index}
+              {...card}
+              onClick={() => setSelectedCard(card)}
+            />
+          ))}
+        </div>
+      </div>
 
-      {experienceCards.map((card, index) => (
-        <CardHorizontal
-          key={index}
-          {...card}
-          onClick={() => setSelectedCard(card)}
-        />
-      ))}
-
-      <h1 className="text-3xl font-semibold text-gray-900 dark:text-white">
-        Formation
-      </h1>
-
-      {trainingCards.map((card, index) => (
-        <CardHorizontal
-          key={index}
-          {...card}
-          onClick={() => setSelectedCard(card)}
-        />
-      ))}
+      <div>
+        <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
+          Formation
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {trainingCards.map((card, index) => (
+            <CardHorizontal
+              key={index}
+              {...card}
+              onClick={() => setSelectedCard(card)}
+            />
+          ))}
+        </div>
+      </div>
 
       {selectedCard && (
         <Modal
           isOpen={true}
           onClose={() => setSelectedCard(null)}
           title={selectedCard.title}
-          children={selectedCard.description}
-        />
+        >
+          {selectedCard.description}
+        </Modal>
       )}
-    </div>
+    </section>
   );
 }

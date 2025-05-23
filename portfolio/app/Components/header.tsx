@@ -6,7 +6,7 @@ export default function Header() {
         <div className="flex items-center space-x-2">
           <img src="/favicon.ico" alt="Logo" className="w-10 h-10" />
           <span className="text-lg font-semibold text-gray-900 dark:text-white">
-            Mon Portfolio
+            Matthieu
           </span>
         </div>
 
