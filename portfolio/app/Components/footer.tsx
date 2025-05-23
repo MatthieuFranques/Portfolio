@@ -9,7 +9,7 @@ export function Footer() {
         </span>
         <div className="flex mt-4 space-x-5 md:mt-0 rtl:space-x-reverse">
           <a
-            href="https://www.linkedin.com/in/ton-profil"
+            href="https://www.linkedin.com/in/matthieu-franques-35a8121b7/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
@@ -27,7 +27,7 @@ export function Footer() {
           </a>
 
           <a
-            href="https://github.com/ton-profil"
+            href="https://github.com/MatthieuFranques"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-gray-900 dark:hover:text-white"

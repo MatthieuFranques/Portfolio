@@ -61,35 +61,31 @@ export default function CareerPage() {
   ];
 
   return (
-    <section className="max-w-screen-xl mx-auto px-4 py-8 space-y-12">
-      <div>
-        <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
-          Expérience
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {experienceCards.map((card, index) => (
-            <CardHorizontal
-              key={index}
-              {...card}
-              onClick={() => setSelectedCard(card)}
-            />
-          ))}
-        </div>
+    <div className="max-w-screen-xl mx-auto px-4 py-8 grid grid-cols-1 gap-6">
+      <h1 className="text-3xl font-semibold text-gray-900 dark:text-white">
+        Expériences
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {experienceCards.map((card, index) => (
+          <CardHorizontal
+            key={index}
+            {...card}
+            onClick={() => setSelectedCard(card)}
+          />
+        ))}
       </div>
+      <h1 className="text-3xl font-semibold text-gray-900 dark:text-white">
+        Formations
+      </h1>
 
-      <div>
-        <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
-          Formation
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {trainingCards.map((card, index) => (
-            <CardHorizontal
-              key={index}
-              {...card}
-              onClick={() => setSelectedCard(card)}
-            />
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {trainingCards.map((card, index) => (
+          <CardHorizontal
+            key={index}
+            {...card}
+            onClick={() => setSelectedCard(card)}
+          />
+        ))}
       </div>
 
       {selectedCard && (
@@ -97,10 +93,9 @@ export default function CareerPage() {
           isOpen={true}
           onClose={() => setSelectedCard(null)}
           title={selectedCard.title}
-        >
-          {selectedCard.description}
-        </Modal>
+          children={selectedCard.description}
+        />
       )}
-    </section>
+    </div>
   );
 }

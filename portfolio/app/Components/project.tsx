@@ -21,36 +21,9 @@ export default function Header() {
       buttonText: "En savoir plus",
     },
     {
-      title: "UI/UX Design",
+      title: "LegalTech",
       description:
-        "Conception d’interfaces élégantes et ergonomiques avec Figma et Adobe XD.",
-      image: "/design-tools.png",
-      link: "#",
-      color: "bg-purple-600",
-      buttonText: "Découvrir",
-    },
-    {
-      title: "Développement Web",
-      description:
-        "Création de sites web modernes, responsives et performants avec Next.js et Tailwind CSS.",
-      image: "/favicon.ico",
-      link: "#",
-      color: "bg-blue-700",
-      buttonText: "Voir plus",
-    },
-    {
-      title: "ShopForMe",
-      description:
-        "Développement d’une applciation pour aider les malvoyant et aveugle a faire leurs course en autonomie",
-      image: "/logoShop4Me.svg",
-      link: "#",
-      color: "bg-green-600",
-      buttonText: "En savoir plus",
-    },
-    {
-      title: "UI/UX Design",
-      description:
-        "Conception d’interfaces élégantes et ergonomiques avec Figma et Adobe XD.",
+        "Conceptiont et creation d'un outil de gestion de fichier juridique (prototype).",
       image: "/design-tools.png",
       link: "#",
       color: "bg-purple-600",
