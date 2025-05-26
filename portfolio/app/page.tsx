@@ -7,7 +7,7 @@ import AboutMe from "./Components/aboutMe";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-4 row-start-2 items-center sm:items-start flex-grow">
+    <main className="main-custom">
       <AboutMe />
       <TechClound />
       <TechTicker />

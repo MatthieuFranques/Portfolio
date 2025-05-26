@@ -1,21 +1,19 @@
 export default function Header() {
   return (
-    <nav className="bg-white border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-      <div className="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-70">
+      <div className="flex justify-between items-center py-6 px-[7vw]">
         {/* Logo + Titre */}
-        <div className="flex items-center space-x-2">
-          <img src="/favicon.ico" alt="Logo" className="w-10 h-10" />
-          <span className="text-lg font-semibold text-gray-900 dark:text-white">
-            Matthieu
-          </span>
+        <div className="flex items-center space-x-4">
+          <img src="/favicon.ico" alt="Logo" className="w-16 h-16" />
+          <span className="text-2xl font-semibold text-white">Matthieu</span>
         </div>
 
         {/* Navigation */}
-        <ul className="hidden md:flex space-x-5 text-gray-700 dark:text-gray-200 font-medium text-lg">
+        <ul className="hidden md:flex space-x-10 text-gray-200 font-medium text-xl">
           <li>
             <a
               href="#projects"
-              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+              className="hover:text-blue-400 transition-colors duration-200"
             >
               Projets
             </a>
@@ -23,7 +21,7 @@ export default function Header() {
           <li>
             <a
               href="#about"
-              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+              className="hover:text-blue-400 transition-colors duration-200"
             >
               À propos
             </a>
@@ -31,7 +29,7 @@ export default function Header() {
           <li>
             <a
               href="#contact"
-              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+              className="hover:text-blue-400 transition-colors duration-200"
             >
               Contact
             </a>
