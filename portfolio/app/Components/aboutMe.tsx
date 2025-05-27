@@ -1,14 +1,9 @@
-"use client";
-
 import React from "react";
-
-const title = "Développeur Web Passionné";
-const description =
-  "Je suis développeur fullstack avec une forte expertise en JavaScript, PHP, Python et plus. J’aime créer des interfaces modernes, performantes et maintenables. Curieux et rigoureux, je travaille aussi bien en équipe qu’en autonomie.";
-const imageSrc = "/favicon.ico";
-const altText = "Photo de profil";
+import { aboutMeData } from "@/app/data/aboutMe"; //
 
 export default function AboutMe() {
+  const { title, description, imageSrc, altText } = aboutMeData;
+
   return (
     <div className="flex flex-col md:flex-row items-center bg-white border border-gray-200 rounded-xl shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 max-w-5xl w-full overflow-hidden mx-auto">
       <img

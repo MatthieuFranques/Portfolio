@@ -1,5 +1,7 @@
-import CareerPage from "@/app/career/page";
-import Projects from "@/app/project/page";
+"use client";
+
+import CareerPage from "@/app/Components/career";
+import Projects from "@/app/Components/project";
 import TechTicker from "@/app/Components/techTicker";
 import TechClound from "@/app/Components/techClound";
 import AboutMe from "./Components/aboutMe";
@@ -12,6 +14,7 @@ export default function Home() {
       <TechClound />
       <TechTicker />
       <Projects />
+      <CareerPage />
       <TrainingTimeLine />
     </main>
   );

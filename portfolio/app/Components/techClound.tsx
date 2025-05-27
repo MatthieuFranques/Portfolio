@@ -1,36 +1,5 @@
-"use client";
-
 import React, { useEffect, useRef } from "react";
-
-const techs = [
-  "JavaScript",
-  "React",
-  "Next.js",
-  "VueJS",
-  "Flutter",
-  "HTML5",
-  "CSS3",
-  "Bootstrap",
-  "Blazor",
-  "PHP",
-  "Laravel",
-  "Python",
-  "Java",
-  "C# (.NET)",
-  "Git",
-  "Docker",
-  "GitLab",
-  "MySQL",
-  "MariaDB",
-  "Firebase",
-  "Cassandra",
-  "Meilisearch",
-  "Agile",
-  "UML",
-  "Réseaux",
-  "APIs",
-  "REST",
-];
+import { techs } from "@/app/data/techClound";
 
 export default function TechCloud() {
   const cloudRef = useRef<HTMLDivElement>(null);
