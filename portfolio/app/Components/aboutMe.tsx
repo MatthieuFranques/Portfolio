@@ -6,7 +6,7 @@ export default function AboutMe() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="flex flex-col md:flex-row items-start bg-white border border-gray-200 rounded-xl shadow-md dark:border-gray-700 dark:bg-gray-800 max-w-6xl w-full overflow-hidden mx-auto p-6">
+    <div className="card-dark-gradient">
       <img
         className="object-cover w-full h-80 md:h-[420px] md:w-72 md:rounded-none md:rounded-s-xl"
         src={imageSrc}

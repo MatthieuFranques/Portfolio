@@ -34,6 +34,7 @@ export default function Contact() {
         <div>
           <label className="block text-sm font-medium">Message</label>
           <textarea
+            rows={6}
             className="w-full rounded-lg border border-white/30 bg-white/10 p-3 text-white placeholder-white/50"
             placeholder="Votre message"
           ></textarea>

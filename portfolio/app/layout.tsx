@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/Components/header";
 import { Footer } from "@/app/Components/footer";
+import MouseHighlight from "@/app/Components/MouseHighlight";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,9 +28,11 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
+        {/* <MouseHighlight> */}
         <Header />
         {children}
         <Footer />
+        {/* </MouseHighlight> */}
       </body>
     </html>
   );
