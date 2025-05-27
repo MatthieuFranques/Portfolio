@@ -23,9 +23,7 @@ export default function TechCloud() {
 
   return (
     <section className="max-w-screen-xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
-        Mes compétences
-      </h1>
+      <h2 className="text-4xl font-bold mb-20 text-center">Mes compétences</h2>
       <div
         ref={cloudRef}
         className="relative flex flex-wrap justify-center items-center gap-6 p-8 text-gray-900 dark:text-white"

@@ -21,7 +21,7 @@ export const cards = [
     title: "LegalTech",
     description:
       "Conceptiont et creation d'un outil de gestion de fichier juridique (prototype).",
-    image: "/design-tools.png",
+    image: "/icons/legalTech.png",
     link: "#",
     color: "bg-purple-600",
     buttonText: "Découvrir",

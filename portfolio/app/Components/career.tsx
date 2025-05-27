@@ -11,9 +11,7 @@ export default function CareerPage() {
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 py-8 grid grid-cols-1 gap-6">
-      <h1 className="text-3xl font-semibold text-gray-900 dark:text-white">
-        Expériences
-      </h1>
+      <h2 className="text-4xl font-bold mb-20 text-center">Expériences</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {experienceCards.map((card) => (
           <CardHorizontal
@@ -23,10 +21,6 @@ export default function CareerPage() {
           />
         ))}
       </div>
-
-      <h1 className="text-3xl font-semibold text-gray-900 dark:text-white mt-8">
-        Formations
-      </h1>
 
       {selectedCard && (
         <Modal
