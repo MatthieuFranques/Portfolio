@@ -41,9 +41,9 @@ export default function Contact() {
 
         <button
           type="submit"
-          className="inline-block rounded-full bg-white px-10 py-3 text-sm font-semibold text-pink-600 transition hover:bg-pink-100"
+          className="inline-block rounded-full border-2 border-white px-10 py-3 text-sm font-semibold text-white bg-transparent transition hover:bg-pink-600 hover:text-white"
         >
-          Send Message
+          Envoyer
         </button>
       </form>
     </div>

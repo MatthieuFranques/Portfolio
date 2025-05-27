@@ -33,16 +33,47 @@ body {
   grid-row-start: 2;
   align-items: center;
   flex-grow: 1;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
-  padding-left: 5vw;
-  padding-right: 5vw;
+ /* border-left: 1px solid rgba(255, 255, 255, 0.3); */
+  /* border-right: 1px solid rgba(255, 255, 255, 0.3); */
+  /* padding-left: 5vw; */
+  /* padding-right: 5vw; */
   padding-top: 12rem; 
-  max-width: 1600px;
+  /* max-width: 1600px;  */
   margin-left: auto;
   margin-right: auto;
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,          /* noir en haut */
+    #4b5563 30%,         /* gris (gray-600) */
+    #542996 45%,         /* violet commence */
+    #542996 55%,         /* violet termine */
+    #4b5563 70%,         /* gris (gray-600) */
+    #000000 100%         /* noir en bas */
+  );
+  color: white;
 }
 
+
+/* Footer & Navbar */
+.bg-gradient-dark {
+  background: linear-gradient(
+    to right,
+    #111827, /* gray-900 */
+    #1f2937, /* gray-800 */
+    #111827  /* gray-900 */
+  );
+  color: white;
+}
+
+/* Test */
+.bg-gradient-vertical-center {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #542996,
+    transparent
+  );
+}
 
 @media (min-width: 640px) {
   .main-custom {

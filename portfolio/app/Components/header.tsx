@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-70">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-dark">
       <div className="flex justify-between items-center py-6 px-[7vw]">
         {/* Logo + Titre */}
         <div className="flex items-center space-x-4">
