@@ -14,7 +14,7 @@ export default function CardHorizontal({
   return (
     <div
       onClick={onClick}
-      className="cursor-pointer flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+      className="cursor-pointer flex flex-col items-center bg-white border-2 border-white rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-white dark:bg-gray-800 dark:hover:bg-gray-700"
     >
       <img
         className="w-full md:w-auto md:min-w-[150px] md:max-w-[250px] h-auto md:h-[200px] object-contain p-2 md:rounded-none md:rounded-s-lg"

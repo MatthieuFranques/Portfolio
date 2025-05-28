@@ -1,6 +1,6 @@
 import { trainingCards } from "@/app/data/trainingTimeline";
 import { useEffect, useState } from "react";
-import Modal from "@/app/Components/Modal";
+import Modal from "@/app/Components/modal";
 
 export default function TrainingTimeline() {
   useEffect(() => {
@@ -28,12 +28,12 @@ export default function TrainingTimeline() {
   return (
     <section className="max-w-screen-xl mx-auto px-4 py-20">
       <div className="max-w-5xl mx-auto relative">
-        <h2 className="text-4xl font-bold mb-20 text-center">
+        <h2 className="text-4xl font-bold mb-20 text-center text-gray-800">
           Mon Parcours de Formation
         </h2>
 
         {/* Trait central */}
-        <div className="absolute left-1/2 top-36 bottom-0 transform -translate-x-1/2 border-l-4 border-white/40"></div>
+        <div className="absolute left-1/2 top-36 bottom-0 transform -translate-x-1/2 border-l-4 border-black/80"></div>
 
         <div className="space-y-24">
           {trainingCards.map((card, index) => {
@@ -48,7 +48,7 @@ export default function TrainingTimeline() {
                         onClick={() => setSelectedCard(card)}
                         style={{
                           width: "400px",
-                          transform: "translateX(-200px)",
+                          transform: "translateX(-10px)",
                         }}
                       >
                         <h3 className="font-bold text-xl mb-1">{card.title}</h3>

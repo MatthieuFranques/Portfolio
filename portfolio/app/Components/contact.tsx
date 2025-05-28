@@ -5,7 +5,9 @@ export default function Contact() {
     <div className="mx-auto max-w-screen-md px-4 py-16 sm:px-6 lg:px-8">
       {/* Formulaire de contact */}
       <div className="text-center">
-        <h2 className="text-3xl font-extrabold sm:text-5xl">Contactez-moi</h2>
+        <h2 id="contact" className="text-3xl font-extrabold sm:text-5xl">
+          Contactez-moi
+        </h2>
         <p className="mx-auto mt-4 max-w-sm text-white/80">
           N'hésitez pas à me contacter, je suis à votre disposition pour plus
           d'informations.
