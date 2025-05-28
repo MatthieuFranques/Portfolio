@@ -7,6 +7,7 @@ export default function CareerPage() {
   const [selectedCard, setSelectedCard] = useState<null | {
     title: string;
     description: string;
+    modalDescription: React.ReactNode;
   }>(null);
 
   return (
@@ -27,7 +28,7 @@ export default function CareerPage() {
           isOpen={true}
           onClose={() => setSelectedCard(null)}
           title={selectedCard.title}
-          children={selectedCard.description}
+          description={selectedCard.modalDescription}
         />
       )}
     </div>

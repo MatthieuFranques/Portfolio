@@ -1,13 +1,13 @@
 type ModalProps = {
   title: string;
-  children: string;
+  description?: React.ReactNode;
   isOpen: boolean;
   onClose: () => void;
 };
 
 export default function Modal({
   title,
-  children,
+  description,
   isOpen,
   onClose,
 }: ModalProps) {
@@ -47,7 +47,7 @@ export default function Modal({
 
         {/* Body */}
         <div className="p-4 space-y-4 text-gray-600 dark:text-gray-300">
-          {children}
+          {description}
         </div>
       </div>
     </div>
