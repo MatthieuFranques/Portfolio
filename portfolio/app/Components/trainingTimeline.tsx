@@ -1,5 +1,6 @@
 import { trainingCards } from "@/app/data/trainingTimeline";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Modal from "@/app/Components/Modal";
 
 export default function TrainingTimeline() {
   useEffect(() => {
@@ -19,6 +20,10 @@ export default function TrainingTimeline() {
 
     return () => observer.disconnect();
   }, []);
+  const [selectedCard, setSelectedCard] = useState<null | {
+    title: string;
+    modalDescription: React.ReactNode;
+  }>(null);
 
   return (
     <section className="max-w-screen-xl mx-auto px-4 py-20">
@@ -39,10 +44,11 @@ export default function TrainingTimeline() {
                   <>
                     <div className="w-1/2 pr-8 text-right relative">
                       <div
-                        className="reveal bg-gray-800 p-6 rounded-lg inline-block shadow-md opacity-0 translate-y-10 transition-all duration-700 ease-out"
+                        className="reveal bg-gray-800 p-6 rounded-lg inline-block shadow-md opacity-0 translate-y-10 transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:bg-gray-700 cursor-pointer"
+                        onClick={() => setSelectedCard(card)}
                         style={{
                           width: "400px",
-                          transform: "translateX(-200px)", // translation gauche fixe
+                          transform: "translateX(-200px)",
                         }}
                       >
                         <h3 className="font-bold text-xl mb-1">{card.title}</h3>
@@ -70,7 +76,8 @@ export default function TrainingTimeline() {
                     </div>
                     <div className="w-1/2 pl-8 text-left relative">
                       <div
-                        className="reveal bg-gray-800 p-6 rounded-lg inline-block shadow-md opacity-0 translate-y-10 transition-all duration-700 ease-out"
+                        className="reveal bg-gray-800 p-6 rounded-lg inline-block shadow-md opacity-0 translate-y-10 transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:bg-gray-700 cursor-pointer"
+                        onClick={() => setSelectedCard(card)}
                         style={{
                           width: "400px",
                           transform: "translateX(10px)",
@@ -87,6 +94,14 @@ export default function TrainingTimeline() {
           })}
         </div>
       </div>
+      {selectedCard && (
+        <Modal
+          isOpen={true}
+          onClose={() => setSelectedCard(null)}
+          title={selectedCard.title}
+          description={selectedCard.modalDescription}
+        />
+      )}
     </section>
   );
 }
