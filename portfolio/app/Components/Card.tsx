@@ -1,10 +1,15 @@
+export type SizeType = "sm" | "md" | "lg" | "xl";
+
 type CardProps = {
   title: string;
   description: string;
   image: string;
   link: string;
-  color: string; // bg-blue-700, bg-green-600, etc.
+  color: string;
   buttonText: string;
+  modalDescription?: React.ReactNode;
+  onClick?: () => void;
+  size?: SizeType;
 };
 
 export default function Card({
@@ -14,6 +19,7 @@ export default function Card({
   link,
   color,
   buttonText,
+  onClick,
 }: CardProps) {
   return (
     <div className="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
@@ -29,8 +35,8 @@ export default function Card({
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {description}
         </p>
-        <a
-          href={link}
+        <button
+          onClick={onClick}
           className={`inline-flex items-center px-3 py-2 text-sm font-medium text-white ${color} rounded-lg hover:brightness-110 focus:ring-4 focus:outline-none`}
         >
           {buttonText}
@@ -43,7 +49,7 @@ export default function Card({
           >
             <path d="M1 5h12M9 1l4 4-4 4" />
           </svg>
-        </a>
+        </button>
       </div>
     </div>
   );
