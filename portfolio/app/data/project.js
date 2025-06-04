@@ -76,8 +76,17 @@ export const cards = [
               Maquette mobile
             </h3>
             <div className="flex justify-center mb-4">
-              {/* <img src="/Shop4Me/MaquetteMobile.png" alt="Maquette mobile" className="rounded-lg shadow-md max-h-96 object-contain" /> */}
-              <p className="italic text-gray-500">Maquette non disponible</p>
+              <img
+                src="/Shop4Me/figma1.png"
+                alt="Maquette mobile"
+                className="rounded-lg shadow-md max-h-96 object-contain"
+              />
+              <img
+                src="/Shop4Me/figma2.png"
+                alt="Maquette mobile"
+                className="rounded-lg shadow-md max-h-96 object-contain mx-5"
+              />
+              {/* <p className="italic text-gray-500">Maquette non disponible</p> */}
             </div>
           </section>
 
@@ -114,6 +123,41 @@ export const cards = [
     color: "bg-purple-600",
     buttonText: "Découvrir",
     size: "xl",
-    modalDescription: <></>,
+    modalDescription: (
+      <>
+        <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
+          <section className="mb-6 border-b border-white pb-4">
+            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+              Description
+            </h3>
+            <p className="leading-relaxed">
+              LegalTech vise à simplifier l’accès aux services juridiques grâce
+              à une plateforme numérique innovante.
+            </p>
+          </section>
+
+          <section className="mb-6 border-b border-white pb-4">
+            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+              Aperçu
+            </h3>
+            <div className="flex justify-center mb-4">
+              {/* <img src="/Shop4Me/IntranetPlan.png" alt="Plan intranet" className="rounded-lg shadow-md max-h-96 object-contain" /> */}
+              <p className="italic text-gray-500">Contenu non disponible</p>
+            </div>
+          </section>
+
+          <section className="text-center">
+            <a
+              href="https://github.com/MatthieuFranques/LegalTech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
+            >
+              Voir plus de détails sur GitHub
+            </a>
+          </section>
+        </div>
+      </>
+    ),
   },
 ];

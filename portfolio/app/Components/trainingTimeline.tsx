@@ -28,7 +28,7 @@ export default function TrainingTimeline() {
   return (
     <section className="max-w-screen-xl mx-auto px-4 py-20">
       <div className="max-w-5xl mx-auto relative">
-        <h2 className="text-4xl font-bold mb-20 text-center text-gray-800">
+        <h2 className="text-4xl font-bold mb-20 text-center">
           Mon Parcours de Formation
         </h2>
 
@@ -48,7 +48,7 @@ export default function TrainingTimeline() {
                         onClick={() => setSelectedCard(card)}
                         style={{
                           width: "400px",
-                          transform: "translateX(-10px)",
+                          transform: "translateX(-200px)",
                         }}
                       >
                         <h3 className="font-bold text-xl mb-1">{card.title}</h3>
