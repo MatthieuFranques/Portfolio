@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CardHorizontal from "@/app/Components/CardHorizontal";
+import CardHorizontal from "@/app/Components/cardHorizontal";
 import Modal from "@/app/Components/modal";
 import { experienceCards } from "@/app/data/career";
 

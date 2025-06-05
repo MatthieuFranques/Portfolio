@@ -1,4 +1,4 @@
-import Card from "@/app/Components/Card";
+import Card from "@/app/Components/card";
 import { cards } from "@/app/data/project";
 import Modal from "@/app/Components/modal";
 import { useState } from "react";
