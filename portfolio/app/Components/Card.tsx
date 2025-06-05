@@ -1,5 +1,3 @@
-export type SizeType = "sm" | "md" | "lg" | "xl";
-
 type CardProps = {
   title: string;
   description: string;
@@ -9,7 +7,7 @@ type CardProps = {
   buttonText: string;
   modalDescription?: React.ReactNode;
   onClick?: () => void;
-  size?: SizeType;
+  size?: string;
 };
 
 export default function Card({
