@@ -1,4 +1,4 @@
-import Card, { SizeType } from "@/app/Components/Card";
+import Card from "@/app/Components/Card";
 import { cards } from "@/app/data/project";
 import Modal from "@/app/Components/modal";
 import { useState } from "react";
@@ -8,10 +8,11 @@ export default function Header() {
     title: string;
     description: string;
     modalDescription?: React.ReactNode;
-    size?: SizeType;
+    size?: string;
   }>(null);
   return (
     <section
+      id="projects"
       className="max-w-screen-xl mx-auto px-4 py-8"
       style={{ marginBottom: "6rem" }}
     >

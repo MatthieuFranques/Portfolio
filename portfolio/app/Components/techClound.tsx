@@ -22,7 +22,7 @@ export default function TechCloud() {
   }, []);
 
   return (
-    <section className="max-w-screen-xl mx-auto px-4 py-12">
+    <section className="max-w-screen-xl mx-auto px-4 py-12" id="competences">
       <h2 className="text-4xl font-bold mb-20 text-center">Mes compétences</h2>
       <div
         ref={cloudRef}
