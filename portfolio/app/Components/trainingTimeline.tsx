@@ -33,7 +33,7 @@ export default function TrainingTimeline() {
         </h2>
 
         {/* Trait central */}
-        <div className="absolute left-1/2 top-36 bottom-0 transform -translate-x-1/2 border-l-4 border-black/80"></div>
+        <div className="absolute left-1/2 top-36 bottom-0 transform -translate-x-1/2 border-l-4 border-gray-400 dark:border-gray-600"></div>
 
         <div className="space-y-24">
           {trainingCards.map((card, index) => {
@@ -44,20 +44,24 @@ export default function TrainingTimeline() {
                   <>
                     <div className="w-1/2 pr-8 text-right relative">
                       <div
-                        className="reveal bg-gray-800 p-6 rounded-lg inline-block shadow-md opacity-0 translate-y-10 transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:bg-gray-700 cursor-pointer"
+                        className="reveal bg-white dark:bg-gray-800 p-6 rounded-lg inline-block shadow-md opacity-0 translate-y-10 transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
                         onClick={() => setSelectedCard(card)}
                         style={{
                           width: "400px",
                           transform: "translateX(-200px)",
                         }}
                       >
-                        <h3 className="font-bold text-xl mb-1">{card.title}</h3>
-                        <p className="text-white/70 text-lg">{card.subtitle}</p>
+                        <h3 className="font-bold text-xl mb-1 text-gray-800 dark:text-gray-100">
+                          {card.title}
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-300 text-lg">
+                          {card.subtitle}
+                        </p>
                       </div>
                     </div>
                     <div className="absolute left-1/2 transform -translate-x-1/2">
                       <div
-                        className={`w-16 h-16 rounded-full ${card.color} border-4 border-gray-900 flex items-center justify-center text-white text-3xl transition-transform hover:scale-110`}
+                        className={`w-16 h-16 rounded-full ${card.color} border-4 border-gray-200 dark:border-gray-800 flex items-center justify-center text-white text-3xl transition-transform hover:scale-110`}
                       >
                         {card.icon}
                       </div>
@@ -69,22 +73,26 @@ export default function TrainingTimeline() {
                     <div className="w-1/2" />
                     <div className="absolute left-1/2 transform -translate-x-1/2">
                       <div
-                        className={`w-16 h-16 rounded-full ${card.color} border-4 border-gray-900 flex items-center justify-center text-white text-3xl transition-transform hover:scale-110`}
+                        className={`w-16 h-16 rounded-full ${card.color} border-4 border-gray-200 dark:border-gray-800 flex items-center justify-center text-white text-3xl transition-transform hover:scale-110`}
                       >
                         {card.icon}
                       </div>
                     </div>
                     <div className="w-1/2 pl-8 text-left relative">
                       <div
-                        className="reveal bg-gray-800 p-6 rounded-lg inline-block shadow-md opacity-0 translate-y-10 transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:bg-gray-700 cursor-pointer"
+                        className="reveal bg-white dark:bg-gray-800 p-6 rounded-lg inline-block shadow-md opacity-0 translate-y-10 transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
                         onClick={() => setSelectedCard(card)}
                         style={{
                           width: "400px",
                           transform: "translateX(10px)",
                         }}
                       >
-                        <h3 className="font-bold text-xl mb-1">{card.title}</h3>
-                        <p className="text-white/70 text-lg">{card.subtitle}</p>
+                        <h3 className="font-bold text-xl mb-1 text-gray-800 dark:text-gray-100">
+                          {card.title}
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-300 text-lg">
+                          {card.subtitle}
+                        </p>
                       </div>
                     </div>
                   </>
@@ -94,6 +102,7 @@ export default function TrainingTimeline() {
           })}
         </div>
       </div>
+
       {selectedCard && (
         <Modal
           isOpen={true}

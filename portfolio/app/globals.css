@@ -54,8 +54,15 @@ body {
   );
   color: white;
 }
+/* White mode */
+@media (prefers-color-scheme: light) {
+  .bg-gradient-dark {
+    background: rgba(255, 255, 255, 0.85); 
+    color: #111827;
+  }
+}
 
-/* Test card */
+/* Card AboutMe */
 .card-dark-gradient {
   display: flex;
   flex-direction: column;
@@ -71,9 +78,16 @@ body {
   margin-right: auto;
   margin-bottom: 6rem;
   padding: 1.5rem;
-  background: linear-gradient(to right, #111827, #1f2937, #111827);
-  color: white;
+  background-color: white; 
+  color: black;
   gap: 3rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .card-dark-gradient {
+    background-color: #1E2939; 
+    color: white;
+  }
 }
 
 

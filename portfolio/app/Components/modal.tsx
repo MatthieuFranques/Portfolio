@@ -33,7 +33,9 @@ export default function Modal({
         className={`relative z-10 bg-white dark:bg-gray-700 rounded-lg shadow w-full mx-4 max-h-[90vh] overflow-y-auto ${sizeClass}`}
       >
         <div className="sticky top-0 z-20 bg-white dark:bg-gray-700 flex items-center justify-center p-4 border-b border-gray-200 dark:border-gray-600 relative">
-          <h2 className="text-3xl font-bold m-0">{title}</h2>
+          <h2 className="text-3xl font-bold m-0 text-gray-600 dark:text-gray-300">
+            {title}
+          </h2>
           <button
             onClick={onClose}
             className="absolute right-4 text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg p-1"

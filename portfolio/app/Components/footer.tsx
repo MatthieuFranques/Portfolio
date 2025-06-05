@@ -7,9 +7,11 @@ export function Footer() {
       <Contact />
 
       {/* Partie basse avec icônes */}
-      <div className="border-t border-white/20 mt-12">
+      <div className="border-t border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
         <div className="mx-auto max-w-screen-xl px-4 py-6 flex flex-col sm:flex-row items-center justify-between text-sm">
-          <p className="text-white/80">© {currentYear} Matthieu Franques</p>
+          <p className="dark:text-white/80 text-gray-800">
+            © {currentYear} Matthieu Franques
+          </p>
 
           <div className="mt-4 sm:mt-0 flex space-x-6">
             <a

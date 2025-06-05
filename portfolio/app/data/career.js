@@ -5,13 +5,11 @@ export const experienceCards = [
     image: "companys/albarosa.png",
     modalDescription: (
       <>
-        <p>
-          Entreprise de services numériques spécialisée dans le secteur médical.
-        </p>
+        <p>TOTO</p>
         <ul className="list-disc list-inside mt-2">
-          <li>Développement d'interfaces utilisateur avec React</li>
-          <li>Connexion à une API REST</li>
-          <li>Déploiement avec Vercel</li>
+          <li>TOTO</li>
+          <li>TOTO</li>
+          <li>TOTO</li>
         </ul>
       </>
     ),
