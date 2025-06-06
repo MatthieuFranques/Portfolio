@@ -26,7 +26,7 @@ export default function TechCloud() {
       <h2 className="text-4xl font-bold mb-20 text-center">Mes compétences</h2>
       <div
         ref={cloudRef}
-        className="relative flex flex-wrap justify-center items-center gap-6 p-8 text-white"
+        className="relative flex flex-wrap justify-center items-center gap-6 p-8"
       >
         {techs.map((tech, i) => (
           <span

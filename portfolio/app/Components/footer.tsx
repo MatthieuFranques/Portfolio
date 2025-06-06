@@ -3,7 +3,7 @@ import Contact from "@/app/Components/contact";
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-dark">
+    <footer className="contact-section border-t border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
       <Contact />
 
       {/* Partie basse avec icônes */}

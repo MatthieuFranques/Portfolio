@@ -27,6 +27,7 @@ body {
 
 /* Main */
 .main-custom {
+  position: relative;
   display: flex;
   flex-direction: column;
   grid-row-start: 2;
@@ -34,15 +35,161 @@ body {
   flex-grow: 1;
   margin-left: auto;
   margin-right: auto;
-  background: linear-gradient(
-    to right,
-    #4B5563, /* gray-600 */
-    #6B7280, /* gray-500 */
-    #4B5563  /* gray-600 */
-  );
-  color: white;
+  background: rgba(255, 255, 255, 0.85); /* Blanc semi-transparent */
+  color: #1F2937; /* gris foncé */
+  overflow: hidden;
 }
 
+/* Cercles décoratifs */
+.main-custom::before,
+.main-custom::after,
+.main-custom .circle-1,
+.main-custom .circle-2,
+.main-custom .circle-3,
+.main-custom .circle-4,
+.main-custom .circle-5,
+.main-custom .circle-6,
+.main-custom .circle-7 {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+/* Côté gauche haut (bleu) */
+.main-custom::before {
+  width: 450px;
+  height: 450px;
+  top: 5%;
+  left: -200px;
+  background: radial-gradient(circle, #60A5FA, #3B82F6);
+}
+
+/* Côté gauche haut-mid (cyan clair) */
+.main-custom .circle-5 {
+  width: 250px;
+  height: 250px;
+  top: 25%;
+  left: -160px;
+  background: radial-gradient(circle, #22D3EE, #06B6D4);
+}
+
+/* Côté gauche milieu (jaune) */
+.main-custom .circle-2 {
+  width: 350px;
+  height: 350px;
+  top: 45%;
+  left: -180px;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, #FBBF24, #F59E0B);
+}
+
+/* Côté gauche bas-mid (orange clair) */
+.main-custom .circle-6 {
+  width: 220px;
+  height: 220px;
+  bottom: 30%;
+  left: -140px;
+  background: radial-gradient(circle, #FDBA74, #F97316);
+}
+
+/* Côté droit haut-mid (rose clair) */
+.main-custom .circle-7 {
+  width: 260px;
+  height: 260px;
+  top: 30%;
+  right: -180px;
+  background: radial-gradient(circle, #F9A8D4, #DB2777);
+}
+
+/* Côté gauche bas (orange) */
+.main-custom .circle-4 {
+  width: 300px;
+  height: 300px;
+  bottom: 5%;
+  left: -160px;
+  background: radial-gradient(circle, #FB923C, #F97316);
+}
+
+/* Côté droit haut (rose) */
+.main-custom::after {
+  width: 500px;
+  height: 500px;
+  top: 5%;
+  right: -220px;
+  background: radial-gradient(circle, #F472B6, #EC4899);
+}
+
+/* Côté droit milieu (vert) */
+.main-custom .circle-1 {
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  right: -200px;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, #34D399, #10B981);
+}
+
+/* Côté droit bas (violet) */
+.main-custom .circle-3 {
+  width: 450px;
+  height: 450px;
+  bottom: 5%;
+  right: -180px;
+  background: radial-gradient(circle, #A78BFA, #8B5CF6);
+}
+
+/* *********************************************************** */
+/* *********************************************************** */
+/* *********************************************************** */
+/* Contact */
+.contact-section {
+  position: relative;
+  z-index: 1; /* assure que les cercles soient derrière le contenu */
+}
+
+/* Cercles décoratifs */
+.contact-section::before,
+.contact-section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+/* Cercle bas gauche */
+.contact-section::before {
+  width: 300px;
+  height: 300px;
+  bottom: 5%;
+  left: -160px;
+  background: radial-gradient(circle, #FB923C, #F97316);
+}
+
+/* Cercle bas droite */
+.contact-section::after {
+  width: 450px;
+  height: 450px;
+  bottom: 5%;
+  right: -180px;
+  background: radial-gradient(circle, #34D399, #10B981);
+}
+/* Adaptation mobile */
+@media (max-width: 640px) {
+  .contact-section::after {
+    width: 225px;
+    height: 225px;
+    right: 0px; /* ou ajuste selon le rendu souhaité */
+    bottom: -50px;
+  }
+}
+/* *********************************************************** */
+/* *********************************************************** */
+/* *********************************************************** */
 
 /* Footer & Navbar */
 .bg-gradient-dark {
@@ -158,4 +305,29 @@ body {
 
 .float {
   animation: float 4s ease-in-out infinite;
+}
+
+#aboutMe {
+  position: relative; /* indispensable pour que z-index fonctionne */
+  z-index: 1;
+}
+
+#career {
+  position: relative; 
+  z-index: 1;
+}
+
+#projects {
+  position: relative; 
+  z-index: 1;
+}
+
+#trainingTimeLine {
+  position: relative; 
+  z-index: 1;
+}
+
+#contact {
+  position: relative; 
+  z-index: 1;
 }
