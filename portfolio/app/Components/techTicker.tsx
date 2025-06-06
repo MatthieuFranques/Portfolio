@@ -6,9 +6,10 @@ export default function TechTicker() {
       className="max-w-screen-xl mx-auto px-4 py-8 space-y-12"
       style={{ marginBottom: "6rem" }}
     >
-      <h2 className="text-4xl font-bold mb-20 text-center">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-12 sm:mb-20 text-center">
         Mes outils favoris
       </h2>
+
       <div className="overflow-hidden w-full py-4 relative fade-mask">
         <div
           className="flex animate-scroll whitespace-nowrap"
@@ -19,7 +20,7 @@ export default function TechTicker() {
               key={i}
               src={src}
               alt="Tech icon"
-              className="h-12 mx-4 inline-block"
+              className="h-8 sm:h-10 md:h-12 lg:h-14 mx-2 sm:mx-3 md:mx-4 inline-block"
             />
           ))}
         </div>

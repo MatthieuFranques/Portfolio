@@ -178,6 +178,15 @@ body {
   right: -180px;
   background: radial-gradient(circle, #34D399, #10B981);
 }
+/* Adaptation mobile */
+@media (max-width: 640px) {
+  .contact-section::after {
+    width: 225px;
+    height: 225px;
+    right: 0px; /* ou ajuste selon le rendu souhaité */
+    bottom: -50px;
+  }
+}
 /* *********************************************************** */
 /* *********************************************************** */
 /* *********************************************************** */
