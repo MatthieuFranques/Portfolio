@@ -8,6 +8,7 @@ export default function CareerPage() {
     title: string;
     description: string;
     modalDescription: React.ReactNode;
+    size?: string;
   }>(null);
 
   return (
@@ -34,6 +35,7 @@ export default function CareerPage() {
           onClose={() => setSelectedCard(null)}
           title={selectedCard.title}
           description={selectedCard.modalDescription}
+          size={selectedCard.size as "sm" | "md" | "lg" | "xl" | undefined}
         />
       )}
     </div>
