@@ -175,7 +175,7 @@ body {
   width: 450px;
   height: 450px;
   bottom: 5%;
-  right: -180px;
+  right: 0px; 
   background: radial-gradient(circle, #34D399, #10B981);
 }
 /* Adaptation mobile */
