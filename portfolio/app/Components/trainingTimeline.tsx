@@ -52,7 +52,7 @@ export default function TrainingTimeline() {
                       <div
                         className="reveal bg-white dark:bg-gray-800 p-6 rounded-lg inline-block shadow-md opacity-0 translate-y-10 transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer mx-auto md:mx-0"
                         onClick={() => setSelectedCard(card)}
-                        style={{ maxWidth: "400px" }}
+                        style={{ maxWidth: "600px" }}
                       >
                         <h3 className="font-bold text-xl mb-1 text-gray-800 dark:text-gray-100">
                           {card.title}
@@ -109,6 +109,7 @@ export default function TrainingTimeline() {
 
       {selectedCard && (
         <Modal
+          size="lg"
           isOpen={true}
           onClose={() => setSelectedCard(null)}
           title={selectedCard.title}
