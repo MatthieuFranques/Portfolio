@@ -1,63 +1,75 @@
 "use client";
+import { useState } from "react";
 
 export default function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("matthieufranques@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // message disparaît après 2s
+  };
+
   return (
-    <div className="mx-auto max-w-screen-md px-4 py-16 sm:px-6 lg:px-8">
-      {/* Formulaire de contact */}
-      <div className="text-center">
-        <h2
-          id="contact"
-          className="text-3xl font-extrabold sm:text-5xl text-gray-900 dark:text-white"
-        >
-          Contactez-moi
-        </h2>
-        <p className="mx-auto mt-4 max-w-sm text-gray-700 dark:text-white/80">
-          N'hésitez pas à me contacter, je suis à votre disposition pour plus
-          d'informations.
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center p-6">
+      <div className="max-w-3xl w-full bg-gray-800 rounded-lg p-8 shadow-lg font-mono text-gray-200">
+        <h1 className="text-2xl font-bold mb-6 text-green-400">
+          /* Contact */
+        </h1>
+
+        <pre className="bg-gray-900 p-6 rounded-lg overflow-x-auto text-sm">
+          <code>
+            <span className="text-purple-400">const</span>{" "}
+            <span className="text-blue-400">contact</span> = {"{"}
+            {"\n"}
+            {"  "}email:{" "}
+            <span
+              onClick={copyEmail}
+              className="text-yellow-300 cursor-pointer hover:underline"
+              title="Cliquez pour copier"
+            >
+              "matthieufranques@gmail.com"
+            </span>
+            ,{"\n"}
+            {"  "}linkedin:{" "}
+            <a
+              href="https://www.linkedin.com/in/matthieu-franques-35a8121b7/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-yellow-300 hover:underline"
+            >
+              "https://www.linkedin.com/in/matthieu-franques-35a8121b7/"
+            </a>
+            ,{"\n"}
+            {"  "}github:{" "}
+            <a
+              href="https://github.com/MatthieuFranques"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-yellow-300 hover:underline"
+            >
+              "https://github.com/MatthieuFranques"
+            </a>
+            {"\n"}
+            {"};\n\n"}
+            <span className="text-green-400">console</span>.log(
+            <span className="text-pink-400">
+              "Vous pouvez copier l'email ou cliquer sur les liens ci-dessus !"
+            </span>
+            );
+          </code>
+        </pre>
+
+        {copied && (
+          <p className="mt-2 text-green-400 text-sm italic">
+            Email copié dans le presse-papiers ✅
+          </p>
+        )}
+
+        <p className="mt-4 text-gray-500 text-sm italic">
+          /* Style code pour les devs */
         </p>
       </div>
-
-      <form className="mt-8 space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-900 dark:text-white">
-            Nom
-          </label>
-          <input
-            type="text"
-            className="w-full rounded-lg border border-gray-300 bg-white p-3 text-gray-900 placeholder-gray-500 dark:border-white/30 dark:bg-white/10 dark:text-white dark:placeholder-white/50"
-            placeholder="Votre nom"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-900 dark:text-white">
-            Mail
-          </label>
-          <input
-            type="email"
-            className="w-full rounded-lg border border-gray-300 bg-white p-3 text-gray-900 placeholder-gray-500 dark:border-white/30 dark:bg-white/10 dark:text-white dark:placeholder-white/50"
-            placeholder="votre@email.com"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-900 dark:text-white">
-            Message
-          </label>
-          <textarea
-            rows={6}
-            className="w-full rounded-lg border border-gray-300 bg-white p-3 text-gray-900 placeholder-gray-500 dark:border-white/30 dark:bg-white/10 dark:text-white dark:placeholder-white/50"
-            placeholder="Votre message"
-          ></textarea>
-        </div>
-
-        <button
-          type="submit"
-          className="inline-block rounded-full border-2 border-gray-900 bg-white px-10 py-3 text-sm font-semibold text-gray-900 transition hover:bg-pink-600 hover:text-white dark:border-white dark:bg-transparent dark:text-white"
-        >
-          Envoyer
-        </button>
-      </form>
     </div>
   );
 }

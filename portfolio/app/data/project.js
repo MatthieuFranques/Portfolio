@@ -89,18 +89,7 @@ export const cards = [
               {/* <p className="italic text-gray-500">Maquette non disponible</p> */}
             </div>
           </section>
-
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
-              Intranet : création du plan
-            </h3>
-            <div className="flex justify-center mb-4">
-              {/* <img src="/Shop4Me/IntranetPlan.png" alt="Plan intranet" className="rounded-lg shadow-md max-h-96 object-contain" /> */}
-              <p className="italic text-gray-500">Contenu non disponible</p>
-            </div>
-          </section>
-
-          <section className="text-center">
+          {/* <section className="text-center">
             <a
               href="https://github.com/FredericLEDOUARIN/Esp-ShopForMe-Local"
               target="_blank"
@@ -109,7 +98,7 @@ export const cards = [
             >
               Voir plus de détails sur GitHub
             </a>
-          </section>
+          </section> */}
         </div>
       </>
     ),
