@@ -6,12 +6,14 @@ import TechClound from "@/app/Components/techClound";
 import AboutMe from "./Components/aboutMe";
 import TrainingTimeLine from "./Components/trainingTimeline";
 import Career from "./Components/career";
+import CVViewer from "./Components/cvView";
 
 export default function Home() {
   return (
     <main className="main-custom">
-      <div className="pt-48 w-full">
+      <div className="pt-48 w-full" id="aboutMe">
         <AboutMe />
+        <CVViewer />
       </div>
       <div className="circle-1" />
       <TechClound />

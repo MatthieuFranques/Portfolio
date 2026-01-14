@@ -11,7 +11,10 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center p-6">
+    <div
+      className="min-h-screen flex items-center justify-center p-6"
+      id="contact"
+    >
       <div className="max-w-3xl w-full bg-gray-800 rounded-lg p-8 shadow-lg font-mono text-gray-200">
         <h1 className="text-2xl font-bold mb-6 text-green-400">
           /* Contact */

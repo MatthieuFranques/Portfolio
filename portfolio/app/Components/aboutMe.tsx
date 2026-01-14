@@ -6,7 +6,7 @@ export default function AboutMe() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="card-dark-gradient" id="aboutMe">
+    <div className="card-dark-gradient">
       <img
         className="object-cover w-full h-80 md:h-[420px] md:w-72 md:rounded-none md:rounded-s-xl"
         src={imageSrc}

@@ -3,7 +3,7 @@ import { cards } from "@/app/data/project";
 import Modal from "@/app/Components/modal";
 import { useState } from "react";
 
-export default function Header() {
+export default function Projects() {
   const [selectedCard, setSelectedCard] = useState<null | {
     title: string;
     description: string;
