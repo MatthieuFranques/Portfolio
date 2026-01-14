@@ -26,10 +26,7 @@ export default function TrainingTimeline() {
   }>(null);
 
   return (
-    <section
-      className="max-w-screen-xl mx-auto px-4 py-20"
-      id="trainingTimeLine"
-    >
+    <section className="max-w-screen-xl mx-auto px-4 py-20" id="parcours">
       <div className="max-w-5xl mx-auto relative">
         <h2 className="text-4xl font-bold mb-20 text-center">
           Mon Parcours de Formation
