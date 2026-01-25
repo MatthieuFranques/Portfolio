@@ -10,7 +10,7 @@ export default function CVViewer() {
         onClick={() => setOpen(!open)}
         className="px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 transition rounded-md"
       >
-        {open ? "Fermer la visualisation" : "Visualiser mon CV.pdf"}
+        {open ? "Fermer la visualisation" : "Visualiser mon CV"}
       </button>
 
       {open && (

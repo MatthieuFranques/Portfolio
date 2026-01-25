@@ -8,10 +8,10 @@ export const trainingCards = [
       <>
         <p>Option IA & Big Data.</p>
         <ul className="list-disc list-inside mt-2">
-          <li>Develloppement Web & mobile ( flutter, vueJs )</li>
+          <li>Dévelloppement Web & mobile ( flutter, vueJs)</li>
           <li>Big Data (Tableau, Kafka, Spark)</li>
           <li>IA (Bert, CNN, renforcement leaning (QNQ))</li>
-          <li>devops (Docker, Ancible, CI/CD gitLab)</li>
+          <li>devOps (Docker, Ancible, CI/CD GitLab)</li>
           <li>Gestion de projet (Agile, KPI)</li>
         </ul>
       </>
@@ -26,7 +26,7 @@ export const trainingCards = [
       <>
         <p>
           Développement web, gestion de bases de données, bases en UX,
-          programmation orienté objet, Java, droit Informatique, framework
+          programmation orientée objet, Java, droit informatique, framework
           (Laravel, Spring)
         </p>
         <ul className="list-disc list-inside mt-2">
@@ -64,7 +64,7 @@ export const trainingCards = [
         </p>
         <ul className="list-disc list-inside mt-2">
           <li>Base en réseaux</li>
-          <li>Découverte de développement informatiques</li>
+          <li>Découverte de développement informatique</li>
         </ul>
       </>
     ),
