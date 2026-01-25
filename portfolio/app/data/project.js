@@ -12,7 +12,7 @@ export const cards = [
   {
     title: "ShopForMe",
     description:
-      "Développement d’une application pour aider les malvoyant et aveugle a faire leurs course en autonomie",
+      "Développement d’une application pour aider les malvoyants et aveugles à faire leurs courses en autonomie.",
     image: "/logoShop4Me.svg",
     link: "#",
     color: "bg-green-600",

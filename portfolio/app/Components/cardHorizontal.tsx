@@ -14,18 +14,56 @@ export default function CardHorizontal({
   return (
     <div
       onClick={onClick}
-      className="cursor-pointer flex flex-col items-center bg-white rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-white dark:bg-gray-800 dark:hover:bg-gray-700 h-[220px]"
+      className="
+        cursor-pointer
+        flex flex-col md:flex-row
+        items-center
+        bg-white dark:bg-gray-800
+        rounded-lg shadow-sm
+        hover:bg-gray-100 dark:hover:bg-gray-700
+        w-full
+        overflow-hidden
+      "
     >
+      {/* Image */}
       <img
-        className="w-[200px] h-[200px] object-contain p-2 rounded-lg"
+        className="
+          w-full md:w-[200px]
+          h-[160px] md:h-[200px]
+          object-contain
+          p-2
+          rounded-lg
+          shrink-0
+        "
         src={image}
         alt={title}
       />
-      <div className="flex flex-col justify-between p-4 leading-normal">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+
+      {/* Texte */}
+      <div className="flex flex-col p-4 min-w-0 flex-1">
+        <h5
+          className="
+            mb-2
+            font-bold
+            tracking-tight
+            text-lg
+            sm:text-xl
+            md:text-2xl
+            text-gray-900 dark:text-white
+          "
+        >
           {title}
         </h5>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+
+        <p
+          className="
+            font-normal
+            text-sm
+            sm:text-base
+            text-gray-700 dark:text-gray-400
+            break-words
+          "
+        >
           {description}
         </p>
       </div>
