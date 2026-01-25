@@ -5,12 +5,12 @@ export const aboutMeData = {
     {
       label: "Présentation",
       content:
-        "Je suis développeur fullstack avec une forte expertise en JavaScript, PHP, Python et plus. J’aime créer des interfaces modernes, performantes et maintenables. Curieux et rigoureux, je travaille aussi bien en équipe qu’en autonomie.",
+        "Bonjour, je m'appelle  Matthieu FRANQUES, 23 ans, fraîchement diplômé d’Epitech Toulouse. Je suis à la recherche d’une opportunité où je pourrai continuer à apprendre tout en apportant mes compétences et ma créativité à une équipe motivée.",
     },
-    {
-      label: "Passions",
-      content:
-        "Ce que j'apprecie tous autant que le dev c'est le sport en général tous particulièrement la musculation au poids du corp, course a pied et les randonnées. Durant toute mon enfance et lycée je fesais de l'escrime.",
-    },
+    // {
+    //   label: "Passions",
+    //   content:
+    //   "",
+    // },
   ],
 };
