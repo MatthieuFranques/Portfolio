@@ -14,7 +14,6 @@ export const techs = [
   "Docker",
   "GitLab",
   "Firebase",
-  "Cassandra",
   "Agile",
   "UML",
   "APIs",

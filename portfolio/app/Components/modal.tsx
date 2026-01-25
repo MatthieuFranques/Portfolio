@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 type ModalProps = {
   title: string;
@@ -15,20 +16,21 @@ export default function Modal({
   onClose,
   size,
 }: ModalProps) {
-  // Désactiver le scroll du body quand la modal est ouverte
+  // State pour vérifier si le composant est monté côté client
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    setMounted(true); // On monte le composant côté client
+
+    // Bloquer le scroll du body quand la modal est ouverte
+    if (isOpen) document.body.style.overflow = "hidden";
 
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null; // Ne rien rendre côté serveur
 
   const sizeClass = {
     sm: "max-w-sm",
@@ -37,8 +39,8 @@ export default function Modal({
     xl: "max-w-5xl",
   }[size || "md"];
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-screen">
+  return createPortal(
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center w-full h-screen">
       {/* Backdrop */}
       <div
         className="absolute inset-0 backdrop-blur-sm"
@@ -80,6 +82,7 @@ export default function Modal({
           {description}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
