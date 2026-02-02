@@ -162,3 +162,45 @@ body {
   position: relative;
   z-index: 1;
 }
+
+/* Conteneur principal */
+.footer-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Base commune pour les cercles */
+.footer-circle-left, .footer-circle-right {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px); /* Flou augmenté pour une lueur très douce */
+  z-index: 0;
+  pointer-events: none;
+  bottom: -180px; /* Les deux sont fixés en bas */
+  transition: all 0.5s ease;
+}
+
+/* Cercle Vert (Bas Gauche) */
+.footer-circle-left {
+  width: 450px;
+  height: 450px;
+  left: -150px;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.35), rgba(16, 185, 129, 0.05));
+}
+
+/* Cercle Orange (Bas Droite) */
+.footer-circle-right {
+  width: 450px;
+  height: 450px;
+  right: -150px;
+  background: radial-gradient(circle, rgba(251, 146, 60, 0.4), rgba(249, 115, 22, 0.05));
+}
+
+/* Ajustements Mode Sombre */
+.dark .footer-circle-left {
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.15), rgba(16, 185, 129, 0.05));
+}
+
+.dark .footer-circle-right {
+  background: radial-gradient(circle, rgba(251, 146, 60, 0.15), rgba(249, 115, 22, 0.05));
+}
