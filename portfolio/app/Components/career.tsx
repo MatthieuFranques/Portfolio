@@ -13,13 +13,11 @@ export default function CareerPage() {
 
   return (
     <div
+      id="career"
       className="max-w-screen-xl mx-auto px-4 py-8 grid grid-cols-1 gap-6"
       style={{ marginBottom: "6rem" }}
     >
-      <h2
-        id="career"
-        className="text-3xl md:text-4xl font-bold mb-10 md:mb-20 text-center text-gray-900 antialiased tracking-tight"
-      >
+      <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 antialiased tracking-tight mb-10 md:mb-20">
         Expériences
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

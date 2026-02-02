@@ -16,7 +16,7 @@ export default function Contact() {
       id="contact"
     >
       <div className="max-w-3xl w-full bg-gray-800 rounded-lg p-8 shadow-lg font-mono text-gray-200">
-        <h1 className="text-2xl font-bold mb-6 text-green-400">
+        <h1 className="text-2xl font-extrabold mb-6 text-green-400">
           /* Contact */
         </h1>
 

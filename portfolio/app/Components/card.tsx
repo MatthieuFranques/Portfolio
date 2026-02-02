@@ -23,7 +23,7 @@ export default function Card({
     <div className="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
       <img className="rounded-t-lg w-full h-[375px]" src={image} alt={title} />
       <div className="p-5">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 className="mb-2 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
           {title}
         </h5>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 h-[100px]">
@@ -34,7 +34,7 @@ export default function Card({
             onClick={onClick}
             className={`inline-flex items-center px-3 py-2 text-sm font-medium text-white ${color} rounded-lg hover:brightness-110 focus:ring-4 focus:outline-none`}
           >
-            {buttonText}
+            <span className="font-extrabold">{buttonText}</span>
             <svg
               className="w-3.5 h-3.5 ms-2"
               fill="none"

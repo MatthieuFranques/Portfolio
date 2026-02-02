@@ -8,7 +8,7 @@ export const experienceCards = [
       <>
         <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Description
             </h3>
             <p className="leading-relaxed">
@@ -19,7 +19,7 @@ export const experienceCards = [
           </section>
 
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Mes Missions
             </h3>
             <ul className="leading-relaxed list-disc list-inside">
@@ -44,7 +44,7 @@ export const experienceCards = [
               href="https://www.albarosa.fr/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
+              className="inline-block px-6 py-3 bg-blue-600 text-white font-extrabold rounded-lg shadow-md hover:bg-blue-700 transition"
             >
               Site web
             </a>
@@ -62,7 +62,7 @@ export const experienceCards = [
       <>
         <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Description
             </h3>
             <p className="leading-relaxed">
@@ -72,7 +72,7 @@ export const experienceCards = [
           </section>
 
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Mes Missions
             </h3>
             <ul className="leading-relaxed list-disc list-inside">
@@ -97,7 +97,7 @@ export const experienceCards = [
               href="https://www.pinkin.fr/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
+              className="inline-block px-6 py-3 bg-blue-600 text-white font-extrabold rounded-lg shadow-md hover:bg-blue-700 transition"
             >
               Site web
             </a>
@@ -115,7 +115,7 @@ export const experienceCards = [
       <>
         <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Description
             </h3>
             <p className="leading-relaxed">
@@ -125,7 +125,7 @@ export const experienceCards = [
           </section>
 
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Mes Missions
             </h3>
             <ul className="leading-relaxed list-disc list-inside">
@@ -140,7 +140,7 @@ export const experienceCards = [
               href="https://axoptim.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
+              className="inline-block px-6 py-3 bg-blue-600 text-white font-extrabold rounded-lg shadow-md hover:bg-blue-700 transition"
             >
               Site web
             </a>

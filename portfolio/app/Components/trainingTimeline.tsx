@@ -13,7 +13,7 @@ export default function TrainingTimeline() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     cards.forEach((el) => observer.observe(el));
@@ -28,7 +28,7 @@ export default function TrainingTimeline() {
   return (
     <section className="max-w-screen-xl mx-auto px-4 py-20" id="parcours">
       <div className="max-w-5xl mx-auto relative">
-        <h2 className="text-4xl font-bold mb-20 text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 antialiased tracking-tight mb-10 md:mb-20">
           Mon Parcours de Formation
         </h2>
 
@@ -51,7 +51,7 @@ export default function TrainingTimeline() {
                         onClick={() => setSelectedCard(card)}
                         style={{ maxWidth: "600px" }}
                       >
-                        <h3 className="font-bold text-xl mb-1 text-gray-800 dark:text-gray-100">
+                        <h3 className="font-extrabold text-xl mb-1 text-gray-800 dark:text-gray-100">
                           {card.title}
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300 text-lg">
@@ -88,7 +88,7 @@ export default function TrainingTimeline() {
                         onClick={() => setSelectedCard(card)}
                         style={{ maxWidth: "400px" }}
                       >
-                        <h3 className="font-bold text-xl mb-1 text-gray-800 dark:text-gray-100">
+                        <h3 className="font-extrabold text-xl mb-1 text-gray-800 dark:text-gray-100">
                           {card.title}
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300 text-lg">

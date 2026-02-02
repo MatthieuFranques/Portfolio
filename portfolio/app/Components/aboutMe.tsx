@@ -28,24 +28,6 @@ export default function AboutMe() {
           <div className="h-1.5 w-16 bg-blue-600 mx-auto rounded-full"></div>
         </div>
 
-        {/* Navigation des onglets centrée */}
-        <nav className="flex flex-wrap justify-center gap-3 mb-12">
-          {tabs.map((tab, index) => (
-            <button
-              key={tab.label}
-              onClick={() => setActiveIndex(index)}
-              className={`px-8 py-3 rounded-2xl text-sm md:text-base font-bold transition-all duration-300
-                ${
-                  index === activeIndex
-                    ? "bg-blue-600 text-white shadow-lg shadow-blue-500/30 translate-y-[-2px]"
-                    : "bg-white dark:bg-slate-800 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-slate-700"
-                }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </nav>
-
         {/* Zone de contenu textuel */}
         <div className="max-w-2xl mx-auto text-center animate-fadeIn">
           <div className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg md:text-xl font-medium">

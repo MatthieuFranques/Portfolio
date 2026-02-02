@@ -23,7 +23,7 @@ export default function TechCloud() {
 
   return (
     <section className="max-w-screen-xl mx-auto px-4 py-12" id="competences">
-      <h2 className="text-3xl md:text-4xl font-bold mb-10 md:mb-20 text-center text-gray-900 antialiased tracking-tight">
+      <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 antialiased tracking-tight mb-10 md:mb-20">
         Mes compétences
       </h2>{" "}
       <div
@@ -33,7 +33,7 @@ export default function TechCloud() {
         {techs.map((tech, i) => (
           <span
             key={i}
-            className="text-2xl font-semibold float inline-block transition-transform duration-1000"
+            className="text-2xl font-extrabold float inline-block transition-transform duration-1000"
           >
             {tech}
           </span>

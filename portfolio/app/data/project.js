@@ -22,7 +22,7 @@ export const cards = [
       <>
         <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Description
             </h3>
             <p className="leading-relaxed">
@@ -35,7 +35,7 @@ export const cards = [
           </section>
 
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Démo vidéo
             </h3>
             <div className="flex justify-center mb-4">
@@ -47,7 +47,7 @@ export const cards = [
           </section>
 
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Contexte & équipe
             </h3>
             <p className="leading-relaxed">
@@ -59,7 +59,7 @@ export const cards = [
           </section>
 
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Architecture globale (App + IoT)
             </h3>
             <div className="flex justify-center mb-4">
@@ -72,7 +72,7 @@ export const cards = [
           </section>
 
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Maquette mobile
             </h3>
 
@@ -111,7 +111,7 @@ export const cards = [
               href="https://github.com/MatthieuFranques/ShopForMe"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-gray-900 transition"
+              className="inline-block px-6 py-3 bg-gray-800 text-white font-extrabold rounded-lg shadow-md hover:bg-gray-900 transition"
             >
               Répertoire GitHub
             </a>
@@ -133,7 +133,7 @@ export const cards = [
       <>
         <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Description
             </h3>
             <p className="leading-relaxed">
@@ -167,7 +167,7 @@ export const cards = [
           </section>
 
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Aperçu
             </h3>
             <div className="flex justify-center mb-4">
@@ -184,7 +184,7 @@ export const cards = [
               href="https://learn-language-ten.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
+              className="inline-block px-6 py-3 bg-blue-600 text-white font-extrabold rounded-lg shadow-md hover:bg-blue-700 transition"
             >
               Découvrir l’application
             </a>
@@ -193,7 +193,7 @@ export const cards = [
               href="https://github.com/MatthieuFranques/LearnLanguage"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-gray-900 transition"
+              className="inline-block px-6 py-3 bg-gray-800 text-white font-extrabold rounded-lg shadow-md hover:bg-gray-900 transition"
             >
               Répertoire GitHub
             </a>
@@ -209,13 +209,13 @@ export const cards = [
     image: "/icons/legalTech.png",
     link: "#",
     color: "bg-purple-600",
-    buttonText: "Découvrir",
+    buttonText: "En savoir plus",
     size: "xl",
     modalDescription: (
       <>
         <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Description
             </h3>
             <p className="leading-relaxed">
@@ -225,7 +225,7 @@ export const cards = [
           </section>
 
           <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Aperçu
             </h3>
             <div className="flex justify-center mb-4">
@@ -239,7 +239,7 @@ export const cards = [
               href="https://github.com/MatthieuFranques/LegalTech"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-gray-900 transition"
+              className="inline-block px-6 py-3 bg-gray-800 text-white font-extrabold rounded-lg shadow-md hover:bg-gray-900 transition"
             >
               Répertoire GitHub
             </a>

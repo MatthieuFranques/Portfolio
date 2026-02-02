@@ -44,7 +44,7 @@ export default function CardHorizontal({
         <h5
           className="
             mb-2
-            font-bold
+            font-extrabold
             tracking-tight
             text-lg
             sm:text-xl

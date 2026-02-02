@@ -37,7 +37,7 @@ export const trainingCards = [
     ),
   },
   {
-    title: "BTS SIO (Services Informatiques aux Organisations)",
+    title: "BTS SIO",
     subtitle: "Lycée Ozenne, Toulouse 2020-2022.",
     icon: "💻",
     color: "bg-orange-500",
