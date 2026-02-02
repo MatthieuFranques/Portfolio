@@ -11,7 +11,11 @@ export const experienceCards = [
             <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
               Description
             </h3>
-            <p className="leading-relaxed"></p>
+            <p className="leading-relaxed">
+              Développeur à plein temps, j'ai assuré la réalisation de multiples
+              missions techniques, qu'il s'agisse de projets internes ou de
+              solutions destinées aux clients.
+            </p>
           </section>
 
           <section className="mb-6 border-b border-white pb-4">

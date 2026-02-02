@@ -16,12 +16,7 @@ export default function Header() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 shadow-md">
       <div className="flex justify-between items-center py-2 px-[7vw]">
         {/* Logo + Nom */}
-        <div className="flex items-center space-x-3">
-          <img src="/favicon.ico" alt="Logo" className="w-10 h-10" />
-          <span className="text-xl font-semibold text-gray-700 dark:text-gray-300">
-            Matthieu
-          </span>
-        </div>
+        <div className="flex items-center space-x-3"></div>
 
         {/* Bouton hamburger */}
         <button
@@ -49,21 +44,19 @@ export default function Header() {
 
       {/* Menu déroulant */}
       {open && (
-        <div className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-          <ul className="flex flex-col items-center py-4 space-y-4 text-lg font-medium">
-            {links.map(({ href, label }) => (
-              <li key={href}>
-                <a
-                  href={href}
-                  onClick={() => setOpen(false)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="flex flex-col items-end py-4 space-y-4 text-lg font-medium pr-[7vw]">
+          {links.map(({ href, label }) => (
+            <li key={href} className="w-full">
+              <a
+                href={href}
+                onClick={() => setOpen(false)}
+                className="block text-right text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
       )}
     </nav>
   );

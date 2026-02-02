@@ -11,7 +11,7 @@ import CVViewer from "./Components/cvView";
 export default function Home() {
   return (
     <main className="main-custom">
-      <div className="pt-48 w-full" id="aboutMe">
+      <div className="pt-16 w-full" id="aboutMe">
         <AboutMe />
         <CVViewer />
       </div>

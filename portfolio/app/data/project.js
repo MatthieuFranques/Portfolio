@@ -106,16 +106,16 @@ export const cards = [
             </div>
           </section>
 
-          {/* <section className="text-center">
+          <section className="text-center">
             <a
-              href="https://github.com/FredericLEDOUARIN/Esp-ShopForMe-Local"
+              href="https://github.com/MatthieuFranques/ShopForMe"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
+              className="inline-block px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-gray-900 transition"
             >
-              Voir plus de détails sur GitHub
+              Répertoire GitHub
             </a>
-          </section> */}
+          </section>
         </div>
       </>
     ),
@@ -191,6 +191,52 @@ export const cards = [
 
             <a
               href="https://github.com/MatthieuFranques/LearnLanguage"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-gray-900 transition"
+            >
+              Répertoire GitHub
+            </a>
+          </section>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: "LegalTech",
+    description:
+      "Conceptiont et creation d'un outil de gestion de fichier juridique (prototype).",
+    image: "/icons/legalTech.png",
+    link: "#",
+    color: "bg-purple-600",
+    buttonText: "Découvrir",
+    size: "xl",
+    modalDescription: (
+      <>
+        <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
+          <section className="mb-6 border-b border-white pb-4">
+            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+              Description
+            </h3>
+            <p className="leading-relaxed">
+              LegalTech vise à simplifier l’accès aux services juridiques grâce
+              à une plateforme numérique innovante.
+            </p>
+          </section>
+
+          <section className="mb-6 border-b border-white pb-4">
+            <h3 className="text-xl font-semibold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+              Aperçu
+            </h3>
+            <div className="flex justify-center mb-4">
+              {/* <img src="/Shop4Me/IntranetPlan.png" alt="Plan intranet" className="rounded-lg shadow-md max-h-96 object-contain" /> */}
+              <p className="italic text-gray-500">Contenu non disponible</p>
+            </div>
+          </section>
+
+          <section className="text-center">
+            <a
+              href="https://github.com/MatthieuFranques/LegalTech"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-gray-900 transition"

@@ -4,8 +4,6 @@ export const techs = [
   "Next.js",
   "VueJS",
   "Flutter",
-  "HTML5",
-  "CSS3",
   "Blazor",
   "Python",
   "Java",
