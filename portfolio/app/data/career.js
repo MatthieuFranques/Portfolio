@@ -1,3 +1,5 @@
+import React from "react";
+
 export const experienceCards = [
   {
     title: "Alternant développeur Web chez Alb@rosa",
@@ -6,23 +8,24 @@ export const experienceCards = [
     size: "lg",
     modalDescription: (
       <>
-        <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+        {/* On utilise var(--card-text) pour que tout le bloc suive le thème */}
+        <div className="max-w-4xl mx-auto p-6 text-[var(--card-text)] transition-colors duration-300">
+          <section className="mb-6 pb-4">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
               Description
             </h3>
-            <p className="leading-relaxed">
+            <p className="leading-relaxed opacity-90">
               Développeur à plein temps, j'ai assuré la réalisation de multiples
               missions techniques, qu'il s'agisse de projets internes ou de
               solutions destinées aux clients.
             </p>
           </section>
 
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+          <section className="mb-6 pb-4">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
               Mes Missions
             </h3>
-            <ul className="leading-relaxed list-disc list-inside">
+            <ul className="leading-relaxed list-disc list-inside opacity-90 space-y-2">
               <li>
                 Maintenance et amélioration de l’application interne de gestion
                 des employés : correction de bugs, optimisation et ajout de
@@ -33,18 +36,18 @@ export const experienceCards = [
                 gestion des ressources IAM.
               </li>
               <li>
-                {" "}
                 Création d’une interface utilisateur ergonomique pour le pôle
                 IAM d’Airbus.
               </li>
             </ul>
           </section>
-          <section className="text-center">
+
+          <section className="text-center pt-4">
             <a
               href="https://www.albarosa.fr/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-extrabold rounded-lg shadow-md hover:bg-blue-700 transition"
+              className="inline-block px-8 py-3 bg-blue-600 text-white font-extrabold rounded-lg shadow-md hover:bg-blue-700 transition-all hover:scale-105"
             >
               Site web
             </a>
@@ -60,27 +63,26 @@ export const experienceCards = [
     size: "lg",
     modalDescription: (
       <>
-        <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+        <div className="max-w-4xl mx-auto p-6 text-[var(--card-text)] transition-colors duration-300">
+          <section className="mb-6 pb-4">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
               Description
             </h3>
-            <p className="leading-relaxed">
+            <p className="leading-relaxed opacity-90">
               Maintenance et amélioration d’une application Flutter et de
-              l’intranet associé pour optimiser la gestion des contenus internes
+              l’intranet associé pour optimiser la gestion des contenus
+              internes.
             </p>
           </section>
 
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+          <section className="mb-6 pb-4">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
               Mes Missions
             </h3>
-            <ul className="leading-relaxed list-disc list-inside">
+            <ul className="leading-relaxed list-disc list-inside opacity-90 space-y-2">
               <li>
                 Maintenance et optimisation de l'application Flutter :
-                correction de bugs, ajout de nouvelles fonctionnalités et
-                amélioration des performances pour fluidifier l’expérience
-                utilisateur.
+                correction de bugs et amélioration des performances.
               </li>
               <li>
                 Réarchitecture de l'application Flutter pour améliorer la
@@ -88,16 +90,17 @@ export const experienceCards = [
               </li>
               <li>
                 Développement d’un back-office avec Next.js pour simplifier la
-                saisie et la gestion des contenus.
+                gestion des contenus.
               </li>
             </ul>
           </section>
-          <section className="text-center">
+
+          <section className="text-center pt-4">
             <a
               href="https://www.pinkin.fr/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-extrabold rounded-lg shadow-md hover:bg-blue-700 transition"
+              className="inline-block px-8 py-3 bg-blue-600 text-white font-extrabold rounded-lg shadow-md hover:bg-blue-700 transition-all hover:scale-105"
             >
               Site web
             </a>
@@ -113,34 +116,35 @@ export const experienceCards = [
     size: "lg",
     modalDescription: (
       <>
-        <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+        <div className="max-w-4xl mx-auto p-6 text-[var(--card-text)] transition-colors duration-300">
+          <section className="mb-6 pb-4">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
               Description
             </h3>
-            <p className="leading-relaxed">
+            <p className="leading-relaxed opacity-90">
               Développement d’un outil interne de gestion de missions pour
               améliorer le suivi des tâches et la coordination de l’équipe.
             </p>
           </section>
 
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+          <section className="mb-6 pb-4">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
               Mes Missions
             </h3>
-            <ul className="leading-relaxed list-disc list-inside">
+            <ul className="leading-relaxed list-disc list-inside opacity-90">
               <li>
                 Conception et développement d'un outil de gestion de missions en
-                PHP, VBA.
+                PHP et VBA.
               </li>
             </ul>
           </section>
-          <section className="text-center">
+
+          <section className="text-center pt-4">
             <a
               href="https://axoptim.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-extrabold rounded-lg shadow-md hover:bg-blue-700 transition"
+              className="inline-block px-8 py-3 bg-blue-600 text-white font-extrabold rounded-lg shadow-md hover:bg-blue-700 transition-all hover:scale-105"
             >
               Site web
             </a>

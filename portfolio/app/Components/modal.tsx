@@ -16,21 +16,17 @@ export default function Modal({
   onClose,
   size,
 }: ModalProps) {
-  // State pour vérifier si le composant est monté côté client
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true); // On monte le composant côté client
-
-    // Bloquer le scroll du body quand la modal est ouverte
+    setMounted(true);
     if (isOpen) document.body.style.overflow = "hidden";
-
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
-  if (!isOpen || !mounted) return null; // Ne rien rendre côté serveur
+  if (!isOpen || !mounted) return null;
 
   const sizeClass = {
     sm: "max-w-sm",
@@ -41,31 +37,31 @@ export default function Modal({
 
   return createPortal(
     <div className="fixed inset-0 z-[9999] flex items-center justify-center w-full h-screen">
-      {/* Backdrop */}
+      {/* Backdrop : On utilise un fond semi-transparent basé sur la couleur foreground ou background */}
       <div
-        className="absolute inset-0 backdrop-blur-sm"
+        className="absolute inset-0 backdrop-blur-sm bg-black/40 dark:bg-black/60 transition-opacity"
         onClick={onClose}
       ></div>
 
-      {/* Contenu modal */}
+      {/* Contenu modal : Utilisation de tes variables CSS */}
       <div
-        className={`relative z-10 bg-white dark:bg-gray-700 rounded-lg shadow w-full mx-4 max-h-[90vh] overflow-y-auto ${sizeClass}`}
+        className={`relative z-10 bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl shadow-2xl w-full mx-4 max-h-[90vh] overflow-y-auto transition-all duration-300 ${sizeClass}`}
       >
-        {/* Header */}
-        <div className="sticky top-0 z-20 bg-white dark:bg-gray-700 flex items-center justify-center p-4 border-b border-gray-200 dark:border-gray-600 relative">
-          <h2 className="text-3xl font-bold m-0 text-gray-600 dark:text-gray-300">
+        {/* Header : sticky avec le même fond que la carte */}
+        <div className="sticky top-0 z-20 bg-[var(--card-bg)] flex items-center justify-center p-6 border-b border-[var(--card-border)] relative">
+          <h2 className="text-2xl md:text-3xl font-extrabold m-0 text-[var(--card-text)] transition-colors duration-300">
             {title}
           </h2>
 
           <button
             onClick={onClose}
-            className="absolute right-4 text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg p-1"
+            className="absolute right-4 text-[var(--card-text)] opacity-60 hover:opacity-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full p-2 transition-all"
           >
             <svg
-              className="w-4 h-4"
+              className="w-5 h-5"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.5"
               viewBox="0 0 24 24"
             >
               <path
@@ -77,8 +73,8 @@ export default function Modal({
           </button>
         </div>
 
-        {/* Contenu */}
-        <div className="p-4 space-y-4 text-gray-600 dark:text-gray-300">
+        {/* Contenu textuel */}
+        <div className="p-6 text-[var(--card-text)] opacity-90 leading-relaxed transition-colors duration-300">
           {description}
         </div>
       </div>

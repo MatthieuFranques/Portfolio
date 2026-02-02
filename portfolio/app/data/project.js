@@ -1,3 +1,5 @@
+import React from "react";
+
 export const cards = [
   {
     title: "Développement Web",
@@ -6,7 +8,6 @@ export const cards = [
     image: "/favicon.ico",
     link: "#",
     color: "bg-blue-700",
-    // buttonText: "Voir plus",
     size: "xl",
   },
   {
@@ -20,98 +21,66 @@ export const cards = [
     size: "xl",
     modalDescription: (
       <>
-        <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+        {/* On remplace dark:text-gray-100 par var(--card-text) */}
+        <div className="max-w-4xl mx-auto p-6 text-[var(--card-text)] transition-colors duration-300">
+          <section className="mb-6 pb-4">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
               Description
             </h3>
-            <p className="leading-relaxed">
+            <p className="leading-relaxed opacity-90">
               ShopForMe est une application mobile associée à des dispositifs
               IoT, conçue pour aider les personnes aveugles ou malvoyantes à
-              faire leurs courses en toute autonomie. Elle les guide dans le
-              magasin, leur permet de localiser des produits, et d’éviter les
-              obstacles.
+              faire leurs courses en toute autonomie.
             </p>
           </section>
 
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+          <section className="mb-6 pb-4">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
               Démo vidéo
             </h3>
             <div className="flex justify-center mb-4">
-              <video className="h-80 rounded-lg shadow-md" muted autoPlay loop>
+              <video
+                className="h-80 rounded-lg shadow-md border border-[var(--card-border)]"
+                muted
+                autoPlay
+                loop
+              >
                 <source src="/video/Shop4Me_demo.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
           </section>
 
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+          <section className="mb-6 pb-4">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
               Contexte & équipe
             </h3>
-            <p className="leading-relaxed">
+            <p className="leading-relaxed opacity-90">
               Ce projet a été réalisé dans le cadre de ma formation à Epitech.
-              Il a évolué au fil du temps : nous étions d'abord 3 pionniers,
-              puis 8, et enfin 11 membres dans l'équipe. J'occupais le poste de
-              PO et développeur mobile.
+              Équipe de 11 membres. J'occupais le poste de PO et développeur
+              mobile.
             </p>
           </section>
 
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+          <section className="mb-6 pb-4">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
               Architecture globale (App + IoT)
             </h3>
             <div className="flex justify-center mb-4">
               <img
                 src="/Shop4Me/ArchitectureHardwaire.png"
                 alt="Schéma de fonctionnement global"
-                className="rounded-lg shadow-md max-h-96 object-contain"
+                className="rounded-lg shadow-md max-h-96 object-contain bg-white/5 p-2"
               />
             </div>
           </section>
 
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
-              Maquette mobile
-            </h3>
-
-            <div className="flex flex-col items-center gap-4 md:flex-row md:justify-center">
-              <img
-                src="/Shop4Me/figma1.png"
-                alt="Maquette mobile 1"
-                className="
-      w-full 
-      max-w-[180px] 
-      sm:max-w-[220px] 
-      md:max-w-[260px] 
-      rounded-lg 
-      shadow-md 
-      object-contain
-    "
-              />
-              <img
-                src="/Shop4Me/figma2.png"
-                alt="Maquette mobile 2"
-                className="
-      w-full 
-      max-w-[180px] 
-      sm:max-w-[220px] 
-      md:max-w-[260px] 
-      rounded-lg 
-      shadow-md 
-      object-contain
-    "
-              />
-            </div>
-          </section>
-
-          <section className="text-center">
+          <section className="text-center pt-4">
             <a
               href="https://github.com/MatthieuFranques/ShopForMe"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-gray-800 text-white font-extrabold rounded-lg shadow-md hover:bg-gray-900 transition"
+              className="inline-block px-6 py-3 bg-gray-800 dark:bg-gray-100 dark:text-gray-900 text-white font-extrabold rounded-lg shadow-md hover:scale-105 transition-all"
             >
               Répertoire GitHub
             </a>
@@ -123,7 +92,7 @@ export const cards = [
   {
     title: "LearnALanguage",
     description:
-      "Application mobile pour apprendre les bases de nouvelles langues de manière ludique. Anglais uniquement pour le moment.",
+      "Application mobile pour apprendre les bases de nouvelles langues de manière ludique.",
     image: "/logoLL.png",
     link: "#",
     color: "bg-purple-600",
@@ -131,43 +100,30 @@ export const cards = [
     size: "xl",
     modalDescription: (
       <>
-        <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+        <div className="max-w-4xl mx-auto p-6 text-[var(--card-text)] transition-colors duration-300">
+          <section className="mb-6 pb-4">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
               Description
             </h3>
-            <p className="leading-relaxed">
+            <p className="leading-relaxed opacity-90">
               LearnALanguage propose une approche ludique et complète pour
-              apprendre l’anglais à ton rythme. Avec différents modes
-              d’entraînement, tu peux :
+              apprendre l’anglais à ton rythme :
             </p>
-            <br />
-            <ul className="leading-relaxed list-disc list-inside">
+            <ul className="mt-4 leading-relaxed list-disc list-inside space-y-2 opacity-90">
               <li>
-                <strong>Quiz</strong> : teste tes connaissances sur le
-                vocabulaire et la grammaire.
+                <strong>Quiz</strong> : vocabulaire et grammaire.
               </li>
               <li>
-                <strong>Quiz Multiple</strong> : renforce ta mémoire et tes
-                choix rapides avec des questions à choix multiples.
+                <strong>Rapidité</strong> : challenge contre la montre.
               </li>
               <li>
-                <strong>Quiz de rapidité</strong> : challenge-toi et améliore
-                ton temps de réponse.
-              </li>
-              <li>
-                <strong>Trouver le bon ordre</strong> : pratique la construction
-                correcte des phrases.
-              </li>
-              <li>
-                <strong>Compréhension</strong> : travaille ton écoute et ta
-                compréhension orale.
+                <strong>Compréhension</strong> : travail de l'écoute.
               </li>
             </ul>
           </section>
 
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+          <section className="mb-6 pb-4">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
               Aperçu
             </h3>
             <div className="flex justify-center mb-4">
@@ -179,23 +135,22 @@ export const cards = [
             </div>
           </section>
 
-          <section className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <section className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center pt-4">
             <a
               href="https://learn-language-ten.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-extrabold rounded-lg shadow-md hover:bg-blue-700 transition"
+              className="inline-block px-6 py-3 bg-blue-600 text-white font-extrabold rounded-lg shadow-md hover:bg-blue-700 transition-all hover:scale-105"
             >
               Découvrir l’application
             </a>
-
             <a
               href="https://github.com/MatthieuFranques/LearnLanguage"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-gray-800 text-white font-extrabold rounded-lg shadow-md hover:bg-gray-900 transition"
+              className="inline-block px-6 py-3 bg-gray-800 dark:bg-gray-100 dark:text-gray-900 text-white font-extrabold rounded-lg shadow-md hover:scale-105 transition-all"
             >
-              Répertoire GitHub
+              GitHub
             </a>
           </section>
         </div>
@@ -205,7 +160,7 @@ export const cards = [
   {
     title: "LegalTech",
     description:
-      "Conceptiont et creation d'un outil de gestion de fichier juridique (prototype).",
+      "Conception et création d'un outil de gestion de fichier juridique (prototype).",
     image: "/icons/legalTech.png",
     link: "#",
     color: "bg-purple-600",
@@ -213,33 +168,23 @@ export const cards = [
     size: "xl",
     modalDescription: (
       <>
-        <div className="max-w-4xl mx-auto p-6 dark:text-gray-100">
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
+        <div className="max-w-4xl mx-auto p-6 text-[var(--card-text)] transition-colors duration-300">
+          <section className="mb-6 pb-4">
+            <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
               Description
             </h3>
-            <p className="leading-relaxed">
+            <p className="leading-relaxed opacity-90">
               LegalTech vise à simplifier l’accès aux services juridiques grâce
               à une plateforme numérique innovante.
             </p>
           </section>
 
-          <section className="mb-6 border-b border-white pb-4">
-            <h3 className="text-xl font-extrabold mb-2 border-b border-gray-300 dark:border-gray-700 pb-1">
-              Aperçu
-            </h3>
-            <div className="flex justify-center mb-4">
-              {/* <img src="/Shop4Me/IntranetPlan.png" alt="Plan intranet" className="rounded-lg shadow-md max-h-96 object-contain" /> */}
-              <p className="italic text-gray-500">Contenu non disponible</p>
-            </div>
-          </section>
-
-          <section className="text-center">
+          <section className="text-center pt-4">
             <a
               href="https://github.com/MatthieuFranques/LegalTech"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-gray-800 text-white font-extrabold rounded-lg shadow-md hover:bg-gray-900 transition"
+              className="inline-block px-6 py-3 bg-gray-800 dark:bg-gray-100 dark:text-gray-900 text-white font-extrabold rounded-lg shadow-md hover:scale-105 transition-all"
             >
               Répertoire GitHub
             </a>

@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
+/* 1. CONFIGURATION DES VARIABLES */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --main-bg: rgba(255, 255, 255, 0.85);
+  --card-bg: #ffffff;
+  --card-text: #171717;
+  --card-border: #e5e7eb;
+}
+
+/* 2. LE MODE SOMBRE (Déclenché par ton bouton) */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --main-bg: rgba(10, 10, 10, 0.85);
+  --card-bg: #1e293b; /* gray-800 */
+  --card-text: #ffffff;
+  --card-border: #374151; /* gray-700 */
 }
 
 @theme inline {
@@ -12,20 +27,15 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 3. BASE */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Main */
+/* 4. MAIN CUSTOM */
 .main-custom {
   position: relative;
   display: flex;
@@ -35,21 +45,16 @@ body {
   flex-grow: 1;
   margin-left: auto;
   margin-right: auto;
-  background: rgba(255, 255, 255, 0.85); /* Blanc semi-transparent */
-  color: #1F2937; /* gris foncé */
+  background: var(--main-bg);
+  color: var(--foreground);
   overflow: hidden;
+  transition: background 0.3s ease;
 }
 
-/* Cercles décoratifs */
+/* Cercles décoratifs (Inchangés mais opacité réduite en dark pour le confort) */
 .main-custom::before,
 .main-custom::after,
-.main-custom .circle-1,
-.main-custom .circle-2,
-.main-custom .circle-3,
-.main-custom .circle-4,
-.main-custom .circle-5,
-.main-custom .circle-6,
-.main-custom .circle-7 {
+.main-custom [class^="circle-"] {
   content: '';
   position: absolute;
   border-radius: 50%;
@@ -58,276 +63,102 @@ body {
   z-index: 0;
 }
 
-/* Côté gauche haut (bleu) */
-.main-custom::before {
-  width: 450px;
-  height: 450px;
-  top: 5%;
-  left: -200px;
-  background: radial-gradient(circle, #60A5FA, #3B82F6);
+.dark .main-custom::before,
+.dark .main-custom::after,
+.dark [class^="circle-"] {
+  opacity: 0.3; /* On calme les couleurs en mode sombre */
 }
 
-/* Côté gauche haut-mid (cyan clair) */
-.main-custom .circle-5 {
-  width: 250px;
-  height: 250px;
-  top: 25%;
-  left: -160px;
-  background: radial-gradient(circle, #22D3EE, #06B6D4);
+/* Gradients des cercles (Tes réglages d'origine) */
+.main-custom::before { width: 450px; height: 450px; top: 5%; left: -200px; background: radial-gradient(circle, #60A5FA, #3B82F6); }
+.main-custom .circle-5 { width: 250px; height: 250px; top: 25%; left: -160px; background: radial-gradient(circle, #22D3EE, #06B6D4); }
+.main-custom .circle-2 { width: 350px; height: 350px; top: 45%; left: -180px; transform: translateY(-50%); background: radial-gradient(circle, #FBBF24, #F59E0B); }
+.main-custom .circle-6 { width: 220px; height: 220px; bottom: 30%; left: -140px; background: radial-gradient(circle, #FDBA74, #F97316); }
+.main-custom .circle-7 { width: 260px; height: 260px; top: 30%; right: -180px; background: radial-gradient(circle, #F9A8D4, #DB2777); }
+.main-custom .circle-4 { width: 300px; height: 300px; bottom: 5%; left: -160px; background: radial-gradient(circle, #FB923C, #F97316); }
+.main-custom::after { width: 500px; height: 500px; top: 5%; right: -220px; background: radial-gradient(circle, #F472B6, #EC4899); }
+.main-custom .circle-1 { width: 400px; height: 400px; top: 50%; right: -200px; transform: translateY(-50%); background: radial-gradient(circle, #34D399, #10B981); }
+.main-custom .circle-3 { width: 450px; height: 450px; bottom: 5%; right: -180px; background: radial-gradient(circle, #A78BFA, #8B5CF6); }
+
+/* 5. CONTACT SECTION CORRIGÉE */
+.contact-section { 
+  position: relative; 
+  z-index: 1; 
+  /* On utilise la variable de fond pour qu'elle change avec le mode dark */
+  background-color: var(--background); 
 }
 
-/* Côté gauche milieu (jaune) */
-.main-custom .circle-2 {
-  width: 350px;
-  height: 350px;
-  top: 45%;
-  left: -180px;
-  transform: translateY(-50%);
-  background: radial-gradient(circle, #FBBF24, #F59E0B);
+.contact-section::before, .contact-section::after {
+  content: ''; 
+  position: absolute; 
+  border-radius: 50%; 
+  filter: blur(100px); 
+  /* On baisse l'opacité en dark pour ne pas masquer le fond sombre */
+  opacity: 0.4; 
+  z-index: -1; /* ON PASSE EN NÉGATIF pour être SUR d'être derrière le fond */
 }
 
-/* Côté gauche bas-mid (orange clair) */
-.main-custom .circle-6 {
-  width: 220px;
-  height: 220px;
-  bottom: 30%;
-  left: -140px;
-  background: radial-gradient(circle, #FDBA74, #F97316);
+.dark .contact-section::before, .dark .contact-section::after {
+  opacity: 0.2;
 }
 
-/* Côté droit haut-mid (rose clair) */
-.main-custom .circle-7 {
-  width: 260px;
-  height: 260px;
-  top: 30%;
-  right: -180px;
-  background: radial-gradient(circle, #F9A8D4, #DB2777);
-}
+/* .contact-section { position: relative; z-index: 1;
+/* On utilise la variable de fond pour qu'elle change avec le mode dark */
+  /* background-color: var(--background); } */
+/* .contact-section::before, .contact-section::after { */
+  /* content: ''; position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.4; z-index: 0; */
+/* } */
+/* .contact-section::before { width: 300px; height: 300px; bottom: 5%; left: -160px; background: radial-gradient(circle, #FB923C, #F97316); } */
+/* .contact-section::after { width: 450px; height: 450px; bottom: 5%; right: 0px; background: radial-gradient(circle, #34D399, #10B981); } */
 
-/* Côté gauche bas (orange) */
-.main-custom .circle-4 {
-  width: 300px;
-  height: 300px;
-  bottom: 5%;
-  left: -160px;
-  background: radial-gradient(circle, #FB923C, #F97316);
-}
-
-/* Côté droit haut (rose) */
-.main-custom::after {
-  width: 500px;
-  height: 500px;
-  top: 5%;
-  right: -220px;
-  background: radial-gradient(circle, #F472B6, #EC4899);
-}
-
-/* Côté droit milieu (vert) */
-.main-custom .circle-1 {
-  width: 400px;
-  height: 400px;
-  top: 50%;
-  right: -200px;
-  transform: translateY(-50%);
-  background: radial-gradient(circle, #34D399, #10B981);
-}
-
-/* Côté droit bas (violet) */
-.main-custom .circle-3 {
-  width: 450px;
-  height: 450px;
-  bottom: 5%;
-  right: -180px;
-  background: radial-gradient(circle, #A78BFA, #8B5CF6);
-}
-
-/* *********************************************************** */
-/* *********************************************************** */
-/* *********************************************************** */
-/* Contact */
-.contact-section {
-  position: relative;
-  z-index: 1; /* assure que les cercles soient derrière le contenu */
-}
-
-/* Cercles décoratifs */
-.contact-section::before,
-.contact-section::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.5;
-  z-index: 0;
-}
-
-/* Cercle bas gauche */
-.contact-section::before {
-  width: 300px;
-  height: 300px;
-  bottom: 5%;
-  left: -160px;
-  background: radial-gradient(circle, #FB923C, #F97316);
-}
-
-/* Cercle bas droite */
-.contact-section::after {
-  width: 450px;
-  height: 450px;
-  bottom: 5%;
-  right: 0px; 
-  background: radial-gradient(circle, #34D399, #10B981);
-}
-/* Adaptation mobile */
-@media (max-width: 640px) {
-  .contact-section::after {
-    width: 225px;
-    height: 225px;
-    right: 0px; /* ou ajuste selon le rendu souhaité */
-    bottom: -50px;
-  }
-}
-/* *********************************************************** */
-/* *********************************************************** */
-/* *********************************************************** */
-
-/* Footer & Navbar */
+/* 6. GRADIENTS DYNAMIQUES (Navbar / Footer) */
 .bg-gradient-dark {
-  background: linear-gradient(
-    to right,
-    #111827, /* gray-900 */
-    #1f2937, /* gray-800 */
-    #111827  /* gray-900 */
-  );
+  background: rgba(255, 255, 255, 0.9);
+  color: #111827;
+  transition: all 0.3s ease;
+}
+
+.dark .bg-gradient-dark {
+  background: linear-gradient(to right, #111827, #1f2937, #111827);
   color: white;
 }
-/* White mode */
-@media (prefers-color-scheme: light) {
-  .bg-gradient-dark {
-    background: rgba(255, 255, 255, 0.85); 
-    color: #111827;
-  }
-}
 
-/* Card AboutMe */
+/* 7. CARD ABOUT ME DYNAMIQUE */
 .card-dark-gradient {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border: 1px solid #374151;
+  border: 1px solid var(--card-border);
   border-radius: 0.75rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   max-width: 72rem;
   width: 100%;
   overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 6rem;
+  margin: 0 auto 6rem auto;
   padding: 1.5rem;
-  background-color: white; 
-  color: black;
+  background-color: var(--card-bg);
+  color: var(--card-text);
   gap: 3rem;
+  transition: all 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  .card-dark-gradient {
-    background-color: #1E2939; 
-    color: white;
-  }
-}
-
-
-
-/* Mode desktop : alignement horizontal */
 @media screen and (min-width: 768px) {
-  .card-dark-gradient {
-    flex-direction: row;
-    align-items: flex-start;
-  }
+  .card-dark-gradient { flex-direction: row; }
 }
 
-@media (min-width: 640px) {
-  .main-custom {
-    align-items: flex-start;
-  }
-}
-
-/* Animation TecKTicker */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-/*Opaciy left right  */
-.animate-scroll {
-  animation-name: scroll;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
-}
+/* 8. ANIMATIONS (Inchangées) */
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.animate-scroll { animation: scroll 30s linear infinite; }
 
 .fade-mask {
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 20%,
-    black 80%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 20%,
-    black 80%,
-    transparent
-  );
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
 }
 
-/*Word Cloud */
+@keyframes float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(10, -10px); } }
+.float { animation: float 4s ease-in-out infinite; }
 
-@keyframes float {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(10px, -10px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
-}
-
-.float {
-  animation: float 4s ease-in-out infinite;
-}
-
-#aboutMe {
-  position: relative; /* indispensable pour que z-index fonctionne */
-  z-index: 1;
-}
-
-#career {
-  position: relative; 
-  z-index: 1;
-}
-
-#projects {
-  position: relative; 
-  z-index: 1;
-}
-
-#trainingTimeLine {
-  position: relative; 
-  z-index: 1;
-}
-
-#contact {
-  position: relative; 
+/* 9. Z-INDEX FIXES */
+#aboutMe, #career, #projects, #trainingTimeLine, #contact {
+  position: relative;
   z-index: 1;
 }
