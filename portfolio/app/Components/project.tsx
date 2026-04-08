@@ -1,6 +1,6 @@
-import Card from "@/app/Components/card";
+import Card from "@/app/components/card";
 import { cards } from "@/app/data/project";
-import Modal from "@/app/Components/modal";
+import Modal from "@/app/components/modal";
 import { useState } from "react";
 
 export default function Projects() {

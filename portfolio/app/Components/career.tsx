@@ -1,6 +1,6 @@
 import { useState } from "react";
-import CardHorizontal from "@/app/Components/cardHorizontal";
-import Modal from "@/app/Components/modal";
+import CardHorizontal from "@/app/components/cardHorizontal";
+import Modal from "@/app/components/modal";
 import { experienceCards } from "@/app/data/career";
 
 export default function CareerPage() {

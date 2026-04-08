@@ -1,12 +1,12 @@
 "use client";
 
-import Projects from "@/app/Components/project";
-import TechTicker from "@/app/Components/techTicker";
-import TechClound from "@/app/Components/techClound";
-import AboutMe from "./Components/aboutMe";
-import TrainingTimeLine from "./Components/trainingTimeline";
-import Career from "./Components/career";
-import CVViewer from "./Components/cvView";
+import Projects from "@/app/components/project";
+import TechTicker from "@/app/components/techTicker";
+import TechClound from "@/app/components/techClound";
+import AboutMe from "./components/aboutMe";
+import TrainingTimeLine from "./components/trainingTimeline";
+import Career from "./components/career";
+import CVViewer from "./components/cvView";
 
 export default function Home() {
   return (

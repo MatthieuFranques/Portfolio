@@ -1,6 +1,6 @@
 import { trainingCards } from "@/app/data/trainingTimeline";
 import { useEffect, useState } from "react";
-import Modal from "@/app/Components/modal";
+import Modal from "@/app/components/modal";
 
 export default function TrainingTimeline() {
   useEffect(() => {
