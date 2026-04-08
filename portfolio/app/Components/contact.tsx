@@ -1,13 +1,15 @@
 "use client";
 import { useState } from "react";
+import { useLanguage } from "@/app/contexts/languageContext"; // Import du context
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
+  const { language } = useLanguage(); // Récupération de la langue
 
   const copyEmail = () => {
     navigator.clipboard.writeText("matthieufranques@gmail.com");
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // message disparaît après 2s
+    setTimeout(() => setCopied(false), 2000); 
   };
 
   return (
@@ -29,19 +31,19 @@ export default function Contact() {
             <span
               onClick={copyEmail}
               className="text-yellow-300 cursor-pointer hover:underline"
-              title="Cliquez pour copier"
+              title={language === "FR" ? "Cliquez pour copier" : "Click to copy"}
             >
               "matthieufranques@gmail.com"
             </span>
             ,{"\n"}
             {"  "}linkedin:{" "}
             <a
-              href="https://www.linkedin.com/in/matthieu-franques-35a8121b7/"
+              href="https://www.linkedin.com/in/matthieu-franques/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-yellow-300 hover:underline"
             >
-              "https://www.linkedin.com/in/matthieu-franques-35a8121b7/"
+              "https://www.linkedin.com/in/matthieu-franques/"
             </a>
             ,{"\n"}
             {"  "}github:{" "}
@@ -57,7 +59,9 @@ export default function Contact() {
             {"};\n\n"}
             <span className="text-green-400">console</span>.log(
             <span className="text-pink-400">
-              "Vous pouvez copier l'email ou cliquer sur les liens ci-dessus !"
+              {language === "FR" 
+                ? "\"Vous pouvez copier l'email ou cliquer sur les liens ci-dessus !\"" 
+                : "\"You can copy the email or click the links above!\""}
             </span>
             );
           </code>
@@ -65,12 +69,16 @@ export default function Contact() {
 
         {copied && (
           <p className="mt-2 text-green-400 text-sm italic">
-            Email copié dans le presse-papiers ✅
+            {language === "FR" 
+              ? "Email copié dans le presse-papiers ✅" 
+              : "Email copied to clipboard ✅"}
           </p>
         )}
 
         <p className="mt-4 text-gray-500 text-sm italic">
-          /* Style code pour les devs */
+          {language === "FR" 
+            ? "/* Style code pour les devs */" 
+            : "/* Code style for devs */"}
         </p>
       </div>
     </div>

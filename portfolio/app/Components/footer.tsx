@@ -1,5 +1,5 @@
 const currentYear = new Date().getFullYear();
-import Contact from "@/app/Components/contact";
+import Contact from "@/app/components/contact";
 
 export function Footer() {
   return (
