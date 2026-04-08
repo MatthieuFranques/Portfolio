@@ -1,14 +1,17 @@
 import { techIcons } from "@/app/data/techTicker";
+import { useLanguage } from "@/app/contexts/languageContext";
 
 export default function TechTicker() {
+      const { language } = useLanguage();
+  
   return (
     <section
       className="max-w-screen-xl mx-auto px-4 py-8 space-y-12"
       style={{ marginBottom: "6rem" }}
     >
       <h2 className="text-3xl md:text-4xl font-extrabold text-center antialiased tracking-tight mb-10 md:mb-20">
-        Mes outils favoris
-      </h2>
+      {language === "FR" ? "Mes outils favoris" : "Top Tools"}
+    </h2>
 
       <div className="overflow-hidden w-full py-4 relative fade-mask">
         <div

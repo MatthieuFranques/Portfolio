@@ -1,8 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { techs } from "@/app/data/techClound";
+import { useLanguage } from "@/app/contexts/languageContext";
+
 
 export default function TechCloud() {
   const cloudRef = useRef<HTMLDivElement>(null);
+    const { language } = useLanguage();
+  
 
   useEffect(() => {
     const children = cloudRef.current?.children;
@@ -24,8 +28,8 @@ export default function TechCloud() {
   return (
     <section className="max-w-screen-xl mx-auto px-4 py-12" id="competences">
       <h2 className="text-3xl md:text-4xl font-extrabold text-center antialiased tracking-tight mb-10 md:mb-20">
-        Mes compétences
-      </h2>{" "}
+      {language === "FR" ? "Mes compétences" : "My Skills"}
+    </h2>
       <div
         ref={cloudRef}
         className="relative flex flex-wrap justify-center items-center gap-6 p-8"

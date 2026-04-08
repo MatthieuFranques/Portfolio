@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { useLanguage }  from "@/app/contexts/languageContext";
-
+import { useLanguage } from "@/app/contexts/languageContext";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -10,17 +9,31 @@ export default function Header() {
   const [mounted, setMounted] = useState(false);
   const { language, toggleLanguage } = useLanguage();
 
-
   useEffect(() => {
     setMounted(true);
   }, []);
 
   const links = [
-    { href: "#aboutMe", label: "À propos" },
-    { href: "#projects", label: "Projets" },
-    { href: "#career", label: "Expériences" },
-    { href: "#parcours", label: "Mon Parcours de Formation" },
-    { href: "#contact", label: "Contact" },
+    { 
+      href: "#aboutMe", 
+      label: language === "FR" ? "À propos" : "About" 
+    },
+    { 
+      href: "#projects", 
+      label: language === "FR" ? "Projets" : "Projects" 
+    },
+    { 
+      href: "#career", 
+      label: language === "FR" ? "Expériences" : "Experience" 
+    },
+    { 
+      href: "#parcours", 
+      label: language === "FR" ? "Mon Parcours" : "My Education" 
+    },
+    { 
+      href: "#contact", 
+      label: "Contact" 
+    },
   ];
 
   if (!mounted) return null;
@@ -33,32 +46,35 @@ export default function Header() {
       ${
         open
           ? "bg-[var(--background)]"
-          : "bg-[var(--background)]/80 backdrop-blur-md" // Utilisation de ta variable de fond avec opacité
+          : "bg-[var(--background)]/80 backdrop-blur-md"
       } border-b border-[var(--card-border)]`}
     >
       <div className="flex justify-between items-center py-3 px-[7vw]">
-        {/* BOUTON DARK MODE - Stylisé avec tes variables */}
-        <button
-          onClick={() => setTheme(isDark ? "light" : "dark")}
-          className="p-2 rounded-xl transition-all duration-300 hover:scale-110 bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--card-text)] shadow-sm"
-          aria-label="Changer le thème"
-        >
-          <span className="text-xl flex items-center justify-center w-6 h-6">
-            {isDark ? "☀️" : "🌙"}
-          </span>
-        </button>
-
-        <button
-            onClick={toggleLanguage}
+        
+        <div className="flex gap-4">
+            {/* BOUTON DARK MODE */}
+            <button
+            onClick={() => setTheme(isDark ? "light" : "dark")}
             className="p-2 rounded-xl transition-all duration-300 hover:scale-110 bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--card-text)] shadow-sm"
-            aria-label="Changer la langue"
-          >
-            <span className="text-sm font-semibold flex items-center justify-center w-6 h-6">
-              {language === "FR" ? "EN" : "FR"}
+            aria-label="Changer le thème"
+            >
+            <span className="text-xl flex items-center justify-center w-6 h-6">
+                {isDark ? "☀️" : "🌙"}
             </span>
-          </button>
+            </button>
 
-        {/* BOUTON HAMBURGER - Dynamique selon foreground */}
+            <button
+                onClick={toggleLanguage}
+                className="p-2 rounded-xl transition-all duration-300 hover:scale-110 bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--card-text)] shadow-sm min-w-[45px]"
+                aria-label="Changer la langue"
+            >
+                <span className="text-sm font-bold flex items-center justify-center">
+                {language === "FR" ? "EN" : "FR"}
+                </span>
+            </button>
+        </div>
+
+        {/* BOUTON HAMBURGER */}
         <button
           onClick={() => setOpen(!open)}
           className="flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none group"
