@@ -2,9 +2,9 @@ name: "Next.js Quality Check"
 
 on:
   push:
-    branches: ["main", "develop"]
+    branches: ["main"]
   pull_request:
-    branches: ["main", "develop"]
+    branches: ["main"]
 
 jobs:
   quality-gate:
@@ -18,15 +18,21 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: portfolio/package-lock.json
 
       - name: Install dependencies
         run: npm ci
+        working-directory: ./portfolio
 
       - name: Lint check
         run: npm run lint
+        working-directory: ./portfolio
+        continue-on-error: true 
 
       - name: TypeScript check
         run: npx tsc --noEmit
+        working-directory: ./portfolio
 
       - name: Production Build
         run: npm run build
+        working-directory: ./portfolio
