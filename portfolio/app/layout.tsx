@@ -5,10 +5,9 @@ import { Footer } from "@/app/components/footer";
 import { Providers } from "./providers";
 import { LanguageProvider } from "@/app/contexts/languageContext";
 
-
 export const metadata: Metadata = {
-  title: "Portfolio de Matthieu Franques",
-  description: "",
+  title: "Matthieu Franques | Full Stack Developer",
+  description: "Full Stack Developer specialized in .NET Core, Flutter, Blazor, and Next.js.",
 };
 
 export default function RootLayout({
@@ -21,9 +20,9 @@ export default function RootLayout({
       <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
         <Providers>
           <LanguageProvider>
-          <Header />
-                    <main>{children}</main>
-          <Footer />
+            <Header />
+            <main>{children}</main>
+            <Footer />
           </LanguageProvider>
         </Providers>
       </body>
