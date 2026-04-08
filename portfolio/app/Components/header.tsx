@@ -1,11 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import { useLanguage }  from "@/app/contexts/languageContext";
+
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
+
 
   useEffect(() => {
     setMounted(true);
@@ -43,6 +47,16 @@ export default function Header() {
             {isDark ? "☀️" : "🌙"}
           </span>
         </button>
+
+        <button
+            onClick={toggleLanguage}
+            className="p-2 rounded-xl transition-all duration-300 hover:scale-110 bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--card-text)] shadow-sm"
+            aria-label="Changer la langue"
+          >
+            <span className="text-sm font-semibold flex items-center justify-center w-6 h-6">
+              {language === "FR" ? "EN" : "FR"}
+            </span>
+          </button>
 
         {/* BOUTON HAMBURGER - Dynamique selon foreground */}
         <button
