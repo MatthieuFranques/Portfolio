@@ -1,6 +1,7 @@
 export const trainingCards = [
   {
     title: "Epitech MSC Pro (Bac +5)",
+    date: "2023-2025",
     subtitle: {
       FR: "Epitech, Toulouse 2023-2025.",
       EN: "Epitech, Toulouse 2023-2025.",
@@ -32,6 +33,7 @@ export const trainingCards = [
   },
   {
     title: "Licence Pro RTAI",
+    date: "2022-2023",
     subtitle: {
       FR: "Université Toulouse Capitole 2022-2023.",
       EN: "Toulouse Capitole University 2022-2023.",
@@ -57,6 +59,7 @@ export const trainingCards = [
   },
   {
     title: "BTS SIO",
+    date: "2020-2022",
     subtitle: {
       FR: "Lycée Ozenne, Toulouse 2020-2022.",
       EN: "Lycée Ozenne, Toulouse 2020-2022.",
@@ -82,6 +85,7 @@ export const trainingCards = [
   },
   {
     title: "BAC Pro SN",
+    date: "2017-2020",
     subtitle: {
       FR: "Lycée St Joseph Rodez 2017-2020.",
       EN: "Lycée St Joseph Rodez 2017-2020.",
