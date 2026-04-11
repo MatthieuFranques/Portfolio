@@ -23,7 +23,8 @@ export default function AboutMe() {
             <img
               src={data.avatarSrc}
               alt={tr(data.altText, language)}
-              className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-700"
+              /* Suppression de grayscale et hover:grayscale-0 */
+              className="w-full h-full object-cover rounded-full transition-all duration-700"
             />
           </div>
         </div>
@@ -36,7 +37,7 @@ export default function AboutMe() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500"></span>
               </span>
-              Available for Hire
+              Open to work
             </span>
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-white">
               {nameObj.name} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-300">{nameObj.surname}</span>
@@ -91,7 +92,7 @@ export default function AboutMe() {
             <img 
               src={data.projectImageSrc} 
               alt="Latest Work"
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
+              className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-1000 ease-out"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#081131] via-[#081131]/20 to-transparent opacity-90" />
           </div>

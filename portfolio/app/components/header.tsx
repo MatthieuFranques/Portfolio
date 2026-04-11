@@ -38,7 +38,7 @@ export default function Header() {
         
         {/* BOUTONS ACTIONS (Thème & Langue) */}
         <div className="flex gap-3">
-          <button
+          {/* <button
             onClick={() => setTheme(isDark ? "light" : "dark")}
             className="p-2.5 rounded-full transition-all duration-300 bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:scale-110 active:scale-95 shadow-lg"
             aria-label="Changer le thème"
@@ -46,7 +46,7 @@ export default function Header() {
             <span className="w-5 h-5 flex items-center justify-center text-lg">
               {isDark ? "☀️" : "🌙"}
             </span>
-          </button>
+          </button> */}
 
           <button
             onClick={toggleLanguage}

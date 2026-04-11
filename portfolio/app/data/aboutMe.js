@@ -1,6 +1,6 @@
 export const aboutMeData = {
   avatarSrc: "/favicon.ico", 
-  projectImageSrc: "/smartApply.png", 
+  projectImageSrc: "icons/smartApply.svg", 
   altText: {
     FR: "Portrait de Matthieu FRANQUES",
     EN: "Portrait of Matthieu FRANQUES",
@@ -26,6 +26,6 @@ export const aboutMeData = {
   },
   stats: [
     { value: "2+", label: { FR: "Années de Code", EN: "Years Coding" } },
-    { value: "6+", label: { FR: "Projets Terminés", EN: "Projects Completed" } }
+    // { value: "5+", label: { FR: "Projets Terminés", EN: "Projects Completed" } }
   ]
 };
