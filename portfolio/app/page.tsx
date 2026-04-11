@@ -2,7 +2,7 @@
 
 import Projects from "@/app/components/project";
 import TechTicker from "@/app/components/techTicker";
-import TechClound from "@/app/components/techClound";
+import TechBadges from "@/app/components/techBadges";
 import AboutMe from "./components/aboutMe";
 import TrainingTimeLine from "./components/trainingTimeline";
 import Career from "./components/career";
@@ -16,7 +16,7 @@ export default function Home() {
         <CVViewer />
       </div>
       <div className="circle-1" />
-      <TechClound />
+      <TechBadges />
       <TechTicker />
       <div className="circle-2" />
       <Projects />
