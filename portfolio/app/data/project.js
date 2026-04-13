@@ -99,7 +99,7 @@ export const cards = [
       FR: "Application mobile pour apprendre les bases de nouvelles langues de manière ludique.",
       EN: "Mobile app to learn the basics of new languages in a fun and interactive way.",
     },
-    image: "/logoLL.png",
+    image: "icons/logoLL.png",
     link: "#",
     color: "bg-purple-600",
     buttonText: {
@@ -158,42 +158,119 @@ export const cards = [
     ),
   },
   {
-    title: {
-      FR: "LegalTech",
-      EN: "LegalTech",
-    },
-    description: {
-      FR: "Conception et création d'un outil de gestion de fichier juridique (prototype).",
-      EN: "Design and development of a legal file management tool (prototype).",
-    },
-    image: "/icons/legalTech.png",
-    link: "#",
-    color: "bg-purple-600",
-    buttonText: {
-      FR: "En savoir plus",
-      EN: "Learn more",
-    },
-    size: "xl",
-    modalDescription: (language) => (
-      <div className="max-w-4xl mx-auto p-6 text-[var(--card-text)] transition-colors duration-300">
-        <section className="mb-6 pb-4">
-          <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
-            {language === "FR" ? "Description" : "Overview"}
-          </h3>
-          <p className="leading-relaxed opacity-90">
-            {language === "FR"
-              ? "LegalTech vise à simplifier l'accès aux services juridiques grâce à une plateforme numérique innovante."
-              : "LegalTech aims to simplify access to legal services through an innovative digital platform."}
-          </p>
-        </section>
-
-        <section className="text-center pt-4">
-          <a href="https://github.com/MatthieuFranques/LegalTech" target="_blank" rel="noopener noreferrer"
-            className="inline-block px-6 py-3 bg-gray-800 dark:bg-gray-100 dark:text-gray-900 text-white font-extrabold rounded-lg shadow-md hover:scale-105 transition-all">
-            {language === "FR" ? "Répertoire GitHub" : "GitHub Repository"}
-          </a>
-        </section>
-      </div>
-    ),
+  title: {
+    FR: "SmartApply",
+    EN: "SmartApply",
   },
+  description: {
+    FR: "Assistant IA de recherche d'emploi : scraping, enrichissement de prospects et génération de lettres de motivation.",
+    EN: "AI-powered job search assistant: scraping, lead enrichment and cover letter generation.",
+  },
+  image: "icons/smartApply.svg",
+  link: "#",
+  color: "bg-indigo-600",
+  buttonText: {
+    FR: "En savoir plus",
+    EN: "Learn more",
+  },
+  size: "xl",
+  modalDescription: (language) => (
+    <div className="max-w-4xl mx-auto p-6 text-[var(--card-text)] transition-colors duration-300">
+      <section className="mb-6 pb-4">
+        <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
+          {language === "FR" ? "Description" : "Overview"}
+        </h3>
+        <p className="leading-relaxed opacity-90">
+          {language === "FR"
+            ? "SmartApply est un outil d'optimisation de la recherche d'emploi. Il automatise le scraping d'entreprises, le filtrage des prospects, l'enrichissement des données et la génération de lettres de motivation via une IA locale."
+            : "SmartApply is a job search optimization tool. It automates company scraping, prospect filtering, data enrichment, and cover letter generation using local AI inference."}
+        </p>
+      </section>
+
+      <section className="mb-6 pb-4">
+        <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
+          {language === "FR" ? "Fonctionnalités clés" : "Key Features"}
+        </h3>
+        <ul className="mt-2 leading-relaxed list-disc list-inside space-y-2 opacity-90">
+          {(language === "FR" ? [
+            { label: "Lead Explorer", desc: "scraping ciblé et enrichissement via l'API Hunter.io." },
+            { label: "Application Tracker", desc: "suivi des candidatures et interactions Gmail." },
+            { label: "IA locale (Ollama)", desc: "génération de lettres de motivation 100% privée, sans envoi de données." },
+            { label: "Stack Dockerisée", desc: "Angular + FastAPI, démarrage en une commande." },
+          ] : [
+            { label: "Lead Explorer", desc: "targeted scraping and enrichment via the Hunter.io API." },
+            { label: "Application Tracker", desc: "track active applications and Gmail interactions." },
+            { label: "Local AI (Ollama)", desc: "100% private cover letter generation — data never leaves your machine." },
+            { label: "Dockerized Stack", desc: "Angular + FastAPI, one-command setup." },
+          ]).map((item, i) => (
+            <li key={i}><strong>{item.label}</strong> : {item.desc}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="text-center pt-4">
+        <a href="https://github.com/MatthieuFranques/SmartApply" target="_blank" rel="noopener noreferrer"
+          className="inline-block px-6 py-3 bg-gray-800 dark:bg-gray-100 dark:text-gray-900 text-white font-extrabold rounded-lg shadow-md hover:scale-105 transition-all">
+          {language === "FR" ? "Répertoire GitHub" : "GitHub Repository"}
+        </a>
+      </section>
+    </div>
+  ),
+},
+{
+  title: {
+    FR: "Agencement Franques",
+    EN: "Agencement Franques",
+  },
+  description: {
+    FR: "Site vitrine one-page pour un artisan spécialisé en rénovation intérieure.",
+    EN: "One-page showcase website for a renovation craftsman.",
+  },
+  image: "icons/logoAF.png", 
+  link: "#",
+  color: "bg-amber-700",
+  buttonText: {
+    FR: "En savoir plus",
+    EN: "Learn more",
+  },
+  size: "xl",
+  modalDescription: (language) => (
+    <div className="max-w-4xl mx-auto p-6 text-[var(--card-text)] transition-colors duration-300">
+      <section className="mb-6 pb-4">
+        <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
+          {language === "FR" ? "Description" : "Overview"}
+        </h3>
+        <p className="leading-relaxed opacity-90">
+          {language === "FR"
+            ? "Site vitrine one-page réalisé pour un artisan spécialisé en agencement et rénovation (terrasses bois, menuiserie, finitions). L'objectif : renforcer son identité digitale et générer des conversions."
+            : "One-page showcase website built for a craftsman specializing in interior and exterior renovation (wood decking, joinery, finishing work). Goal: strengthen digital identity and drive conversions."}
+        </p>
+      </section>
+
+      <section className="mb-6 pb-4">
+        <h3 className="text-xl font-extrabold mb-2 border-b border-[var(--card-border)] pb-1">
+          {language === "FR" ? "Points techniques" : "Technical Highlights"}
+        </h3>
+        <ul className="mt-2 leading-relaxed list-disc list-inside space-y-2 opacity-90">
+          {(language === "FR" ? [
+            { label: "Zéro framework JS", desc: "HTML5 + Tailwind CSS + Vanilla JS pour une légèreté maximale." },
+            { label: "Mobile first", desc: "layout entièrement responsive optimisé smartphone." },
+            { label: "Déploiement Vercel", desc: "déploiement continu avec domaine personnalisé — projet livrable, en phase de finalisation client (nom de domaine, SEO, ajustements visuels)." },          ] : [
+            { label: "No JS framework", desc: "HTML5 + Tailwind CSS + Vanilla JS for maximum performance." },
+            { label: "Mobile first", desc: "fully responsive layout optimized for smartphones." },
+            { label: "Vercel deployment", desc: "continuous deployment with custom domain — deliverable project, currently in client finalization phase (domain name, SEO, visual adjustments)." },           ]).map((item, i) => (
+            <li key={i}><strong>{item.label}</strong> : {item.desc}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center pt-4">
+        <a href="https://agencement-franques.vercel.app" target="_blank" rel="noopener noreferrer"
+          className="inline-block px-6 py-3 bg-amber-600 text-white font-extrabold rounded-lg shadow-md hover:bg-amber-700 transition-all hover:scale-105">
+          {language === "FR" ? "Voir le site" : "Visit the site"}
+        </a>
+      </section>
+    </div>
+  ),
+},
 ];

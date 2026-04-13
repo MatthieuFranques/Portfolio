@@ -10,12 +10,12 @@ export const aboutMeData = {
     EN: { name: "Matthieu", surname: "FRANQUES" },
   },
   introText: {
-    FR: "23 ans, fraîchement diplômé d'Epitech Toulouse. Je suis à la recherche d'une opportunité où je pourrai continuer à apprendre tout en apportant mes compétences et ma créativité à une équipe motivée.",
-    EN: "23 years old, recently graduated from Epitech Toulouse. I'm looking for an opportunity where I can keep learning while bringing my skills and creativity to a motivated team.",
+  FR: "Je code, je teste, je casse, je recommence, bienvenue sur mon portfolio.\n\nActuellement en recherche active · Bruxelles · Luxembourg · Toulouse",
+  EN: "I code, I test, I break, I start over, welcome to my portfolio.\n\nActively looking · Brussels · Luxembourg · Toulouse",
   },
   detailedText: {
-    FR: "En tant que diplômé d'Epitech, j'ai passé des années à développer une mentalité rigoureuse de résolution de problèmes. Mon approche combine l'excellence technique avec un œil éditorial pour le détail. Je pense que le code est le support à travers lequel nous curatons des expériences. Qu'il s'agisse de concevoir des backends ou de créer des UIs fluides, je recherche l'élégance et l'efficacité dans tout ce que je construis.",
-    EN: "As a graduate from Epitech, I've spent years developing a rigorous problem-solving mindset. My approach combines technical excellence with an editorial eye for detail. I believe that code is the medium through which we curate experiences. Whether it's architecting backends or crafting fluid UIs, I strive for elegance and efficiency in everything I build.",
+  FR: "Je suis animé par deux moteurs : la curiosité et le mouvement. J'apprends vite, je teste, je construis que ce soit en développant un projet from scratch, en explorant une nouvelle techno ou en partant 4 mois en road trip solo en Amérique du Nord. Formé à Epitech, j'ai acquis une solide rigueur technique, que je complète par une approche simple : j'apprends en faisant. J'explore beaucoup, parfois plusieurs sujets en parallèle, mais toujours avec un objectif clair, progresser et transformer mes idées en projets concrets.",
+  EN: "I'm driven by two things: curiosity and momentum. I learn fast, test, and build whether it's developing a project from scratch, exploring a new technology, or spending 4 months on a solo road trip across North America. Trained at Epitech, I've built solid technical foundations, complemented by one simple approach: I learn by doing. I explore a lot, sometimes several subjects at once, but always with a clear goal, keep improving and turn my ideas into concrete projects.",
   },
   latestWork: {
     title: { FR: "Dernier Projet", EN: "Latest Work" },
