@@ -1,114 +1,106 @@
 import { trainingCards } from "@/app/data/trainingTimeline";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Modal from "@/app/components/modal";
-import { useLanguage }  from "@/app/contexts/languageContext";
+import { useLanguage } from "@/app/contexts/languageContext";
 import { tr } from "@/app/lib/translate";
 
 export default function TrainingTimeline() {
   const { language } = useLanguage();
-
   const [selectedCard, setSelectedCard] = useState<null | (typeof trainingCards)[0]>(null);
 
-  useEffect(() => {
-    const cards = document.querySelectorAll(".reveal");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0");
-          }
-        });
-      },
-      { threshold: 0.1 },
-    );
-    cards.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  // Couleurs indexées pour correspondre aux points lumineux du design
+  const colors = [
+    { text: "text-[#84adff]", bg: "bg-[#84adff]", shadow: "shadow-[0_0_15px_rgba(132,173,255,0.8)]", border: "hover:border-[#84adff]/50" },
+    { text: "text-[#fd6c9c]", bg: "bg-[#fd6c9c]", shadow: "shadow-[0_0_15px_rgba(253,108,156,0.8)]", border: "hover:border-[#fd6c9c]/50" },
+    { text: "text-[#f288ff]", bg: "bg-[#f288ff]", shadow: "shadow-[0_0_15px_rgba(234,115,251,0.8)]", border: "hover:border-[#f288ff]/50" },
+  ];
 
-  const modalDescription = selectedCard ? (() => {
-    const desc = selectedCard.modalDescription[language];
+  const renderModalDescription = (card: typeof trainingCards[0]) => {
+    const desc = card.modalDescription[language];
     return (
-      <>
-        <p>{desc.intro}</p>
-        <ul className="list-disc list-inside mt-2">
-          {desc.items.map((item, i) => <li key={i}>{item}</li>)}
+      <div className="space-y-4">
+        <p className="text-on-surface-variant">{desc.intro}</p>
+        <ul className="list-disc list-inside space-y-2 text-on-surface-variant/80">
+          {desc.items.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
         </ul>
-      </>
+      </div>
     );
-  })() : null;
+  };
 
   return (
-    <section className="max-w-screen-xl mx-auto px-4 py-20" id="parcours">
-      <div className="max-w-5xl mx-auto relative">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[var(--foreground)] mb-10 md:mb-20">
-          {language === "FR" ? "Mon Parcours de Formation" : "My Education"}
-        </h2>
+    <section className="mb-32 max-w-7xl mx-auto px-6" id="parcours">
+      {/* En-tête de section style "Curator" */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+        <div>
+          <span className="text-[#fd6c9c] font-medium text-sm uppercase tracking-[0.2em]">
+            {language === "FR" ? "Mon Parcours" : "My Journey"}
+          </span>
+          <h2 className="text-4xl font-extrabold text-[#e0e4ff] mt-2">
+            {language === "FR" ? "Formation" : "Education"}
+          </h2>
+        </div>
+        <div className="hidden md:block h-[2px] flex-1 bg-gradient-to-r from-[#3d466c]/30 to-transparent mx-12 mb-2"></div>
+      </div>
 
-        <div className="hidden md:block absolute left-1/2 top-36 bottom-0 transform -translate-x-1/2 border-l-4 border-[var(--card-border)] transition-colors duration-300"></div>
+      <div className="relative pl-8 md:pl-0">
+        {/* Ligne centrale verticale */}
+        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 bg-gradient-to-b from-[#84adff]/50 via-[#fd6c9c]/50 to-[#f288ff]/20 shadow-[0_0_15px_rgba(132,173,255,0.3)]"></div>
 
-        <div className="space-y-24">
+        <div className="space-y-16">
           {trainingCards.map((card, index) => {
             const isLeft = index % 2 === 0;
-
-            const cardContent = (
-              <div
-                className="reveal p-6 rounded-2xl inline-block opacity-0 translate-y-10 cursor-pointer mx-auto md:mx-0
-                bg-[var(--card-bg)] border border-[var(--card-border)] 
-                transition-all duration-300 ease-in-out
-                shadow-md hover:shadow-2xl 
-                hover:-translate-y-2 hover:brightness-110 active:scale-95"
-                onClick={() => setSelectedCard(card)}
-                style={{ maxWidth: "600px" }}
-              >
-                <h3 className="font-extrabold text-xl mb-1 text-[var(--card-text)]">
-                  {card.title}
-                </h3>
-                <p className="text-[var(--card-text)] opacity-80 text-lg">
-                  {tr(card.subtitle, language)}
-                </p>
-              </div>
-            );
-
-            const icon = (
-              <div className="absolute md:static left-1/2 transform -translate-x-1/2 md:translate-x-0 mb-6 md:mb-0 z-10">
-                <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full ${card.color} border-4 border-[var(--background)] flex items-center justify-center text-white text-2xl md:text-3xl transition-transform hover:scale-125 shadow-lg`}>
-                  {card.icon}
-                </div>
-              </div>
-            );
+            const theme = colors[index % colors.length];
 
             return (
-              <div className="flex flex-col md:flex-row items-center w-full relative" key={index}>
-                {isLeft ? (
-                  <>
-                    <div className="md:w-1/2 md:pr-12 w-full text-center md:text-right mb-8 md:mb-0">
-                      {cardContent}
-                    </div>
-                    {icon}
-                    <div className="md:w-1/2 hidden md:block" />
-                  </>
-                ) : (
-                  <>
-                    <div className="md:w-1/2 hidden md:block" />
-                    {icon}
-                    <div className="md:w-1/2 md:pl-12 w-full text-center md:text-left">
-                      {cardContent}
-                    </div>
-                  </>
-                )}
+              <div 
+                key={index} 
+                className={`relative flex flex-col md:flex-row items-center justify-between ${isLeft ? '' : 'md:flex-row-reverse'}`}
+              >
+                {/* Espace vide pour l'alternance */}
+                <div className="hidden md:block w-[45%]"></div>
+
+                {/* Point lumineux (Marker) */}
+                <div className={`absolute left-0 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full border-4 border-[#020a2f] ${theme.bg} ${theme.shadow} z-10`}></div>
+
+                {/* Carte de contenu */}
+                <div 
+                  onClick={() => setSelectedCard(card)}
+                  className={`w-full md:w-[45%] bg-[#122156]/30 backdrop-blur-xl rounded-xl p-6 border border-[#3d466c]/20 transition-all cursor-pointer group ${theme.border} hover:-translate-y-1`}
+                >
+                  <span className={`${theme.text} text-xs font-bold uppercase tracking-widest block mb-2`}>
+                    {card.date} 
+                  </span>
+                  <h3 className="text-xl font-extrabold text-[#e0e4ff] group-hover:text-white transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="text-[#a0a9d5] font-medium mt-1 italic">
+                    {tr(card.subtitle, language)}
+                  </p>
+                  <p className="text-[#a0a9d5]/70 text-sm mt-4 leading-relaxed line-clamp-2">
+                    {card.modalDescription[language].intro}
+                  </p>
+                  
+                  <div className={`mt-4 flex items-center gap-2 text-xs font-bold ${theme.text} opacity-0 group-hover:opacity-100 transition-opacity`}>
+                    {language === "FR" ? "VOIR LES DÉTAILS" : "VIEW DETAILS"}
+                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </div>
+                </div>
               </div>
             );
           })}
         </div>
       </div>
 
+      {/* Modal */}
       {selectedCard && (
         <Modal
           size="lg"
           isOpen={true}
           onClose={() => setSelectedCard(null)}
           title={selectedCard.title}
-          description={modalDescription}
+          description={renderModalDescription(selectedCard)}
         />
       )}
     </section>

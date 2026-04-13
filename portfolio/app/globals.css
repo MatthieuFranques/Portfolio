@@ -1,23 +1,22 @@
 @import "tailwindcss";
 
-/* 1. CONFIGURATION DES VARIABLES */
+/* 1. CONFIGURATION DU THÈME GLASSMORPHISM */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --main-bg: rgba(255, 255, 255, 0.85);
-  --card-bg: #ffffff;
-  --card-text: #171717;
-  --card-border: #e5e7eb;
+  --foreground: #0f172a;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --accent-primary: #3b82f6;
+  --accent-secondary: #ec4899;
 }
 
-/* 2. LE MODE SOMBRE (Déclenché par ton bouton) */
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --main-bg: rgba(10, 10, 10, 0.85);
-  --card-bg: #1e293b; /* gray-800 */
-  --card-text: #ffffff;
-  --card-border: #374151; /* gray-700 */
+  --background: #020617; /* Fond très sombre "Midnight" */
+  --foreground: #f8fafc;
+  --glass-bg: rgba(15, 23, 42, 0.6); /* Fond bleu nuit translucide */
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --accent-primary: #84adff;
+  --accent-secondary: #f288ff;
 }
 
 @theme inline {
@@ -27,180 +26,106 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* 3. BASE */
+/* 2. BASE & SCROLLBAR */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.5s ease;
+  overflow-x: hidden;
 }
 
-/* 4. MAIN CUSTOM */
+/* Scrollbar personnalisée pour coller au thème */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { 
+  background: var(--glass-border); 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
+
+/* 3. LE CONTENEUR PRINCIPAL (Effet Mesh Gradient) */
 .main-custom {
   position: relative;
   display: flex;
   flex-direction: column;
-  grid-row-start: 2;
-  align-items: center;
-  flex-grow: 1;
-  margin-left: auto;
-  margin-right: auto;
-  background: var(--main-bg);
-  color: var(--foreground);
+  min-height: 100vh;
+  background-color: var(--background);
   overflow: hidden;
-  transition: background 0.3s ease;
 }
 
-/* Cercles décoratifs (Inchangés mais opacité réduite en dark pour le confort) */
+/* Cercles décoratifs (Lueurs d'arrière-plan) */
 .main-custom::before,
 .main-custom::after,
 .main-custom [class^="circle-"] {
   content: '';
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.5;
+  filter: blur(120px);
+  opacity: 0.15;
   z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
 }
 
 .dark .main-custom::before,
 .dark .main-custom::after,
 .dark [class^="circle-"] {
-  opacity: 0.3; /* On calme les couleurs en mode sombre */
+  opacity: 0.25; /* Plus visibles sur fond sombre */
 }
 
-/* Gradients des cercles (Tes réglages d'origine) */
-.main-custom::before { width: 450px; height: 450px; top: 5%; left: -200px; background: radial-gradient(circle, #60A5FA, #3B82F6); }
-.main-custom .circle-5 { width: 250px; height: 250px; top: 25%; left: -160px; background: radial-gradient(circle, #22D3EE, #06B6D4); }
-.main-custom .circle-2 { width: 350px; height: 350px; top: 45%; left: -180px; transform: translateY(-50%); background: radial-gradient(circle, #FBBF24, #F59E0B); }
-.main-custom .circle-6 { width: 220px; height: 220px; bottom: 30%; left: -140px; background: radial-gradient(circle, #FDBA74, #F97316); }
-.main-custom .circle-7 { width: 260px; height: 260px; top: 30%; right: -180px; background: radial-gradient(circle, #F9A8D4, #DB2777); }
-.main-custom .circle-4 { width: 300px; height: 300px; bottom: 5%; left: -160px; background: radial-gradient(circle, #FB923C, #F97316); }
-.main-custom::after { width: 500px; height: 500px; top: 5%; right: -220px; background: radial-gradient(circle, #F472B6, #EC4899); }
-.main-custom .circle-1 { width: 400px; height: 400px; top: 50%; right: -200px; transform: translateY(-50%); background: radial-gradient(circle, #34D399, #10B981); }
-.main-custom .circle-3 { width: 450px; height: 450px; bottom: 5%; right: -180px; background: radial-gradient(circle, #A78BFA, #8B5CF6); }
+/* Placement des lueurs colorées */
+.main-custom::before { width: 600px; height: 600px; top: -10%; left: -10%; background: var(--accent-primary); }
+.main-custom::after { width: 500px; height: 500px; bottom: 10%; right: -5%; background: var(--accent-secondary); }
+.main-custom .circle-1 { width: 400px; height: 400px; top: 40%; right: 10%; background: #6366f1; opacity: 0.1 !important; }
 
-/* 5. CONTACT SECTION CORRIGÉE */
-.contact-section { 
-  position: relative; 
-  z-index: 1; 
-  /* On utilise la variable de fond pour qu'elle change avec le mode dark */
-  background-color: var(--background); 
+/* 4. COMPOSANTS GLASSMORPHISM */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
-.contact-section::before, .contact-section::after {
-  content: ''; 
-  position: absolute; 
-  border-radius: 50%; 
-  filter: blur(100px); 
-  /* On baisse l'opacité en dark pour ne pas masquer le fond sombre */
-  opacity: 0.4; 
-  z-index: -1; /* ON PASSE EN NÉGATIF pour être SUR d'être derrière le fond */
+/* 5. ANIMATIONS */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
 }
 
-.dark .contact-section::before, .dark .contact-section::after {
-  opacity: 0.2;
-}
-
-/* .contact-section { position: relative; z-index: 1;
-/* On utilise la variable de fond pour qu'elle change avec le mode dark */
-  /* background-color: var(--background); } */
-/* .contact-section::before, .contact-section::after { */
-  /* content: ''; position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.4; z-index: 0; */
-/* } */
-/* .contact-section::before { width: 300px; height: 300px; bottom: 5%; left: -160px; background: radial-gradient(circle, #FB923C, #F97316); } */
-/* .contact-section::after { width: 450px; height: 450px; bottom: 5%; right: 0px; background: radial-gradient(circle, #34D399, #10B981); } */
-
-/* 6. GRADIENTS DYNAMIQUES (Navbar / Footer) */
-.bg-gradient-dark {
-  background: rgba(255, 255, 255, 0.9);
-  color: #111827;
-  transition: all 0.3s ease;
-}
-
-.dark .bg-gradient-dark {
-  background: linear-gradient(to right, #111827, #1f2937, #111827);
-  color: white;
-}
-
-/* 7. CARD ABOUT ME DYNAMIQUE */
-.card-dark-gradient {
+.animate-scroll {
   display: flex;
-  flex-direction: column;
-  border: 1px solid var(--card-border);
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  max-width: 72rem;
-  width: 100%;
-  overflow: hidden;
-  margin: 0 auto 6rem auto;
-  padding: 1.5rem;
-  background-color: var(--card-bg);
-  color: var(--card-text);
-  gap: 3rem;
-  transition: all 0.3s ease;
+  width: max-content;
+  animation: scroll 40s linear infinite;
 }
 
-@media screen and (min-width: 768px) {
-  .card-dark-gradient { flex-direction: row; }
+/* Masque de fondu pour le ticker */
+.ticker-fade {
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
-/* 8. ANIMATIONS (Inchangées) */
-@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-.animate-scroll { animation: scroll 30s linear infinite; }
-
-.fade-mask {
-  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(10, -10px); } }
-.float { animation: float 4s ease-in-out infinite; }
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
 
-/* 9. Z-INDEX FIXES */
-#aboutMe, #career, #projects, #trainingTimeLine, #contact {
+/* 6. UTILS */
+.text-gradient {
+  background: linear-gradient(to r, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Z-INDEX Fixes pour les sections */
+section {
   position: relative;
   z-index: 1;
-}
-
-/* Conteneur principal */
-.footer-container {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Base commune pour les cercles */
-.footer-circle-left, .footer-circle-right {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px); /* Flou augmenté pour une lueur très douce */
-  z-index: 0;
-  pointer-events: none;
-  bottom: -180px; /* Les deux sont fixés en bas */
-  transition: all 0.5s ease;
-}
-
-/* Cercle Vert (Bas Gauche) */
-.footer-circle-left {
-  width: 450px;
-  height: 450px;
-  left: -150px;
-  background: radial-gradient(circle, rgba(52, 211, 153, 0.35), rgba(16, 185, 129, 0.05));
-}
-
-/* Cercle Orange (Bas Droite) */
-.footer-circle-right {
-  width: 450px;
-  height: 450px;
-  right: -150px;
-  background: radial-gradient(circle, rgba(251, 146, 60, 0.4), rgba(249, 115, 22, 0.05));
-}
-
-/* Ajustements Mode Sombre */
-.dark .footer-circle-left {
-  background: radial-gradient(circle, rgba(52, 211, 153, 0.15), rgba(16, 185, 129, 0.05));
-}
-
-.dark .footer-circle-right {
-  background: radial-gradient(circle, rgba(251, 146, 60, 0.15), rgba(249, 115, 22, 0.05));
 }

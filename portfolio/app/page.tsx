@@ -2,21 +2,19 @@
 
 import Projects from "@/app/components/project";
 import TechTicker from "@/app/components/techTicker";
-import TechClound from "@/app/components/techClound";
+import TechBadges from "@/app/components/techBadges";
 import AboutMe from "./components/aboutMe";
 import TrainingTimeLine from "./components/trainingTimeline";
 import Career from "./components/career";
-import CVViewer from "./components/cvView";
 
 export default function Home() {
   return (
     <main className="main-custom">
       <div className="pt-16 w-full" id="aboutMe">
         <AboutMe />
-        <CVViewer />
       </div>
       <div className="circle-1" />
-      <TechClound />
+      <TechBadges />
       <TechTicker />
       <div className="circle-2" />
       <Projects />
