@@ -258,14 +258,14 @@ export const cards = [
             { label: "Déploiement Vercel", desc: "déploiement continu avec domaine personnalisé — projet livrable, en phase de finalisation client (nom de domaine, SEO, ajustements visuels)." },          ] : [
             { label: "No JS framework", desc: "HTML5 + Tailwind CSS + Vanilla JS for maximum performance." },
             { label: "Mobile first", desc: "fully responsive layout optimized for smartphones." },
-            { label: "Vercel deployment", desc: "continuous deployment with custom domain — deliverable project, currently in client finalization phase (domain name, SEO, visual adjustments)." },           ]).map((item, i) => (
+                      ]).map((item, i) => (
             <li key={i}><strong>{item.label}</strong> : {item.desc}</li>
           ))}
         </ul>
       </section>
 
       <section className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center pt-4">
-        <a href="https://agencement-franques.vercel.app" target="_blank" rel="noopener noreferrer"
+        <a href="https://www.agencement-franques.fr/" target="_blank" rel="noopener noreferrer"
           className="inline-block px-6 py-3 bg-amber-600 text-white font-extrabold rounded-lg shadow-md hover:bg-amber-700 transition-all hover:scale-105">
           {language === "FR" ? "Voir le site" : "Visit the site"}
         </a>
